@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, N的博客">
+    <meta name="keywords" content="vue3 新特性, N的博客">
     <meta name="description" content="敲敲敲">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | N的博客</title>
+    <title>vue3 新特性 | N的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">vue3 新特性</h1>
                 </div>
             </div>
         </div>
@@ -429,9 +429,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/vue3/">
+                                <span class="chip bg-color">vue3</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -464,7 +468,703 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Welcome-to-我的博客-！"><a href="#Welcome-to-我的博客-！" class="headerlink" title="Welcome to 我的博客 ！"></a>Welcome to 我的博客 ！</h1>
+                <h1 id="Vue3-新特性"><a href="#Vue3-新特性" class="headerlink" title="Vue3 新特性"></a>Vue3 新特性</h1><p>vue3新增了很多新的特性，目前可以使用 安装 vue-compisition-api 包进行尝鲜，vue3将会对vue2进行向下兼容，因此不必担心因为使用vue3 后 vue2的特性不能够使用</p>
+<h2 id="安装包、使用包"><a href="#安装包、使用包" class="headerlink" title="安装包、使用包"></a>安装包、使用包</h2><ol>
+<li><p>npm install @vue/composition-api –save</p>
+</li>
+<li><p>import VueCompositionApi from ‘@vue/composition-api’</p>
+</li>
+<li><p>Vue.use(VueCompositionApi)</p>
+</li>
+</ol>
+<h2 id="1-setup"><a href="#1-setup" class="headerlink" title="1.setup"></a>1.setup</h2><p>setup() 函数是 vue3 中，专门为组件提供的新属性。它为我们使用 vue3 的 Composition API 新特性提供了统一的入口。</p>
+<h3 id="1-1-执行时机"><a href="#1-1-执行时机" class="headerlink" title="1.1 执行时机"></a>1.1 执行时机</h3><p>setup 函数会在 beforeCreate 之后、created 之前执行!!!</p>
+<h3 id="1-2-接收-props-数据"><a href="#1-2-接收-props-数据" class="headerlink" title="1.2 接收 props 数据"></a>1.2 接收 props 数据</h3><p>在 props 中定义当前组件允许外界传递过来的参数名称： props: { p1: String }<br>通过 setup 函数的第一个形参，接收 props 数据： setup(props) { console.log(props.p1) }</p>
+<h3 id="1-3-context"><a href="#1-3-context" class="headerlink" title="1.3 context"></a>1.3 context</h3><p>setup 函数的第二个形参是一个上下文对象，这个上下文对象中包含了一些有用的属性，这些属性在 vue 2.x 中需要通过 this 才能访问到，在 vue 3.x 中，它们的访问方式如下：</p>
+<ol>
+<li>const MyComponent = {</li>
+<li>setup(props, context) {</li>
+<li>   context.attrs</li>
+<li>   context.slots</li>
+<li>   context.parent</li>
+<li>   context.root</li>
+<li>   context.emit</li>
+<li>   context.refs</li>
+<li>  }</li>
+<li>}</li>
+</ol>
+<p>注意：在 setup() 函数中无法访问到 this !!!!!!!!!!!!!</p>
+<h2 id="2-reactive"><a href="#2-reactive" class="headerlink" title="2.reactive"></a>2.reactive</h2><p>reactive() 函数接收一个普通对象，返回一个响应式的数据对象。</p>
+<h3 id="2-1基本语法"><a href="#2-1基本语法" class="headerlink" title="2.1基本语法"></a>2.1基本语法</h3><p>等价于 vue 2.x 中的 Vue.observable() 函数，vue 3.x 中提供了 reactive() 函数，用来创建响应式的数据对象，基本代码示例如下：</p>
+<ol>
+<li>import { reactive } from ‘@vue/composition-api’</li>
+<li>// 创建响应式数据对象，得到的 state 类似于 vue 2.x 中 data() 返回的响应式对象</li>
+<li>const state = reactive({ count: 0 })</li>
+</ol>
+<h3 id="2-2-定义响应式数据供-template-使用"><a href="#2-2-定义响应式数据供-template-使用" class="headerlink" title="2.2 定义响应式数据供 template 使用"></a>2.2 定义响应式数据供 template 使用</h3><p>按需导入 reactive 函数：</p>
+<ol>
+<li>import { reactive } from ‘@vue/composition-api’</li>
+</ol>
+<ul>
+<li>在 setup() 函数中调用 reactive() 函数，创建响应式数据对象：</li>
+</ul>
+<ol>
+<li>setup() {</li>
+<li><pre><code>// 创建响应式数据对象
+</code></pre>
+</li>
+<li>   const state = reactive({count: 0})</li>
+<li></li>
+<li><pre><code>// setup 函数中将响应式数据对象 return 出去，供 template 使用
+</code></pre>
+</li>
+<li>   return state</li>
+<li>}</li>
+</ol>
+<ul>
+<li>在 template 中访问响应式数据：</li>
+</ul>
+<ol>
+<li><p>当前的 count 值为：</p></li>
+<li><p>ref</p>
+<h3 id="3-1基本语法"><a href="#3-1基本语法" class="headerlink" title="3.1基本语法"></a>3.1基本语法</h3><p>ref() 函数用来根据给定的值创建一个响应式的数据对象，ref() 函数调用的返回值是一个对象，这个对象上只包含一个 .value 属性：</p>
+</li>
+<li><p>import { ref } from ‘@vue/composition-api’</p>
+</li>
+<li></li>
+<li><p>// 创建响应式数据对象 count，初始值为 0</p>
+</li>
+<li><p>const count = ref(0)</p>
+</li>
+<li></li>
+<li><p>// 如果要访问 ref() 创建出来的响应式数据对象的值，必须通过 .value 属性才可以</p>
+</li>
+<li><p>console.log(count.value) // 输出 0</p>
+</li>
+<li><p>// 让 count 的值 +1</p>
+</li>
+<li><p>count.value++</p>
+</li>
+<li><p>// 再次打印 count 的值</p>
+</li>
+<li><p>console.log(count.value) // 输出 1</p>
+</li>
+</ol>
+<h3 id="3-2-在-template-中访问-ref-创建的响应式数据"><a href="#3-2-在-template-中访问-ref-创建的响应式数据" class="headerlink" title="3.2 在 template 中访问 ref 创建的响应式数据"></a>3.2 在 template 中访问 ref 创建的响应式数据</h3><p>在 setup() 中创建响应式数据：</p>
+<ol>
+<li>import { ref } from ‘@vue/composition-api’</li>
+<li></li>
+<li>setup() {</li>
+<li>   const count = ref(0)</li>
+<li></li>
+<li><pre><code>return &#123;
+</code></pre>
+</li>
+<li><pre><code>    count,
+</code></pre>
+</li>
+<li><pre><code>    name: ref(&#39;zs&#39;)
+</code></pre>
+</li>
+<li><pre><code>&#125;
+</code></pre>
+</li>
+<li>}</li>
+</ol>
+<ul>
+<li>在 template 中访问响应式数据：</li>
+</ul>
+<ol>
+<li><template></li>
+<li> <p> --- </p></li>
+<li></template></li>
+</ol>
+<h2 id="3-3-在-reactive-对象中访问-ref-创建的响应式数据"><a href="#3-3-在-reactive-对象中访问-ref-创建的响应式数据" class="headerlink" title="3.3 在 reactive 对象中访问 ref 创建的响应式数据"></a>3.3 在 reactive 对象中访问 ref 创建的响应式数据</h2><p>当把 ref() 创建出来的响应式数据对象，挂载到 reactive() 上时，会自动把响应式数据对象展开为原始的值，不需通过 .value 就可以直接被访问，例如：</p>
+<ol>
+<li>const count = ref(0)</li>
+<li>const state = reactive({</li>
+<li>  count</li>
+<li>})</li>
+<li></li>
+<li>console.log(state.count) // 输出 0</li>
+<li>state.count++ // 此处不需要通过 .value 就能直接访问原始值</li>
+<li>console.log(count) // 输出 1</li>
+</ol>
+<p>注意：新的 ref 会覆盖旧的 ref，示例代码如下：</p>
+<ol>
+<li>// 创建 ref 并挂载到 reactive 中</li>
+<li>const c1 = ref(0)</li>
+<li>const state = reactive({</li>
+<li>  c1</li>
+<li>})</li>
+<li></li>
+<li>// 再次创建 ref，命名为 c2</li>
+<li>const c2 = ref(9)</li>
+<li>// 将 旧 ref c1 替换为 新 ref c2</li>
+<li>state.c1 = c2</li>
+<li>state.c1++</li>
+<li></li>
+<li>console.log(state.c1) // 输出 10</li>
+<li>console.log(c2.value) // 输出 10</li>
+<li>console.log(c1.value) // 输出 0</li>
+</ol>
+<h2 id="4-isRef"><a href="#4-isRef" class="headerlink" title="4. isRef"></a>4. isRef</h2><p>isRef() 用来判断某个值是否为 ref() 创建出来的对象；应用场景：当需要展开某个可能为 ref() 创建出来的值的时候，例如：</p>
+<ol>
+<li>import { isRef } from ‘@vue/composition-api’</li>
+<li></li>
+<li>const unwrapped = isRef(foo) ? foo.value : foo</li>
+</ol>
+<h2 id="5-toRefs"><a href="#5-toRefs" class="headerlink" title="5.toRefs"></a>5.toRefs</h2><p>toRefs() 函数可以将 reactive() 创建出来的响应式对象，转换为普通的对象，只不过，这个对象上的每个属性节点，都是 ref() 类型的响应式数据，最常见的应用场景如下：</p>
+<ol>
+<li>import { toRefs } from ‘@vue/composition-api’</li>
+<li></li>
+<li>setup() {</li>
+<li><pre><code>// 定义响应式数据对象
+</code></pre>
+</li>
+<li><pre><code>const state = reactive(&#123;
+</code></pre>
+</li>
+<li><pre><code>  count: 0
+</code></pre>
+</li>
+<li><pre><code>&#125;)
+</code></pre>
+</li>
+<li></li>
+<li><pre><code>// 定义页面上可用的事件处理函数
+</code></pre>
+</li>
+<li><pre><code>const increment = () =&gt; &#123;
+</code></pre>
+</li>
+<li><pre><code>  state.count++
+</code></pre>
+</li>
+<li><pre><code>&#125;
+</code></pre>
+</li>
+<li></li>
+<li><pre><code>// 在 setup 中返回一个对象供页面使用
+</code></pre>
+</li>
+<li><pre><code>// 这个对象中可以包含响应式的数据，也可以包含事件处理函数
+</code></pre>
+</li>
+<li><pre><code>return &#123;
+</code></pre>
+</li>
+<li><pre><code>  // 将 state 上的每个属性，都转化为 ref 形式的响应式数据
+</code></pre>
+</li>
+<li><pre><code>  ...toRefs(state),
+</code></pre>
+</li>
+<li><pre><code>  // 自增的事件处理函数
+</code></pre>
+</li>
+<li><pre><code>  increment
+</code></pre>
+</li>
+<li><pre><code>&#125;
+</code></pre>
+</li>
+<li>}</li>
+</ol>
+<p>页面上可以直接访问 setup() 中 return 出来的响应式数据：</p>
+<template>
+  <div>
+     <p>当前的count值为：</p>
+    <button @click="increment">+1</button>
+  </div>
+</template>
+
+<h2 id="6-computed"><a href="#6-computed" class="headerlink" title="6.computed"></a>6.computed</h2><p>computed() 用来创建计算属性，computed() 函数的返回值是一个 ref 的实例。使用 computed 之前需要按需导入：</p>
+<ol>
+<li>import { computed } from ‘@vue/composition-api’</li>
+</ol>
+<h3 id="6-1-创建只读计算属性"><a href="#6-1-创建只读计算属性" class="headerlink" title="6.1 创建只读计算属性"></a>6.1 创建只读计算属性</h3><p>在调用 computed() 函数期间，传入一个 function 函数，可以得到一个只读的计算属性，示例代码如下：</p>
+<ol>
+<li>// 创建一个 ref 响应式数据</li>
+<li>const count = ref(1)</li>
+<li></li>
+<li>// 根据 count 的值，创建一个响应式的计算属性 plusOne</li>
+<li>// 它会根据依赖的 ref 自动计算并返回一个新的 ref</li>
+<li>const plusOne = computed(() =&gt; count.value + 1)</li>
+<li></li>
+<li>console.log(plusOne.value) // 输出 2</li>
+<li>plusOne.value++ // error</li>
+</ol>
+<h3 id="6-2-创建可读可写的计算属性"><a href="#6-2-创建可读可写的计算属性" class="headerlink" title="6.2.创建可读可写的计算属性"></a>6.2.创建可读可写的计算属性</h3><p>在调用 computed() 函数期间，传入一个包含 get 和 set 函数的对象，可以得到一个可读可写的计算属性，示例代码如下：</p>
+<ol>
+<li>// 创建一个 ref 响应式数据</li>
+<li>const count = ref(1)</li>
+<li></li>
+<li>// 创建一个 computed 计算属性</li>
+<li>const plusOne = computed({</li>
+<li>  // 取值函数</li>
+<li>  get: () =&gt; count.value + 1,</li>
+<li>  // 赋值函数</li>
+<li>  set: val =&gt; {</li>
+<li><pre><code>count.value = val - 1
+</code></pre>
+</li>
+<li>  }</li>
+<li>})</li>
+<li></li>
+<li>// 为计算属性赋值的操作，会触发 set 函数</li>
+<li>plusOne.value = 9</li>
+<li>// 触发 set 函数后，count 的值会被更新</li>
+<li>console.log(count.value) // 输出 8</li>
+</ol>
+<h2 id="7-watch"><a href="#7-watch" class="headerlink" title="7.watch"></a>7.watch</h2><p>watch() 函数用来监视某些数据项的变化，从而触发某些特定的操作，使用之前需要按需导入：</p>
+<ol>
+<li>import { watch } from ‘@vue/composition-api’<br>1<h3 id="7-1基本用法"><a href="#7-1基本用法" class="headerlink" title="7.1基本用法"></a>7.1基本用法</h3></li>
+<li>const count = ref(0)</li>
+<li></li>
+<li>// 定义 watch，只要 count 值变化，就会触发 watch 回调</li>
+<li>// watch 会在创建时会自动调用一次</li>
+<li>watch(() =&gt; console.log(count.value))</li>
+<li>// 输出 0</li>
+<li></li>
+<li>setTimeout(() =&gt; {</li>
+<li>  count.value++</li>
+<li>  // 输出 1</li>
+<li>}, 1000)</li>
+</ol>
+<h3 id="7-2-监视指定的数据源"><a href="#7-2-监视指定的数据源" class="headerlink" title="7.2 监视指定的数据源"></a>7.2 监视指定的数据源</h3><p>监视 reactive 类型的数据源：</p>
+<ol>
+<li>// 定义数据源</li>
+<li>const state = reactive({ count: 0 })</li>
+<li>// 监视 state.count 这个数据节点的变化</li>
+<li>watch(</li>
+<li>  () =&gt; state.count,</li>
+<li>  (count, prevCount) =&gt; {</li>
+<li><pre><code>/* ... */
+</code></pre>
+</li>
+<li>  }</li>
+<li>)</li>
+</ol>
+<p>监视 ref 类型的数据源：</p>
+<ol>
+<li>// 定义数据源</li>
+<li>const count = ref(0)</li>
+<li>// 指定要监视的数据源</li>
+<li>watch(count, (count, prevCount) =&gt; {</li>
+<li>  /* … */</li>
+<li>})</li>
+</ol>
+<h3 id="7-3-监视多个数据源"><a href="#7-3-监视多个数据源" class="headerlink" title="7.3 监视多个数据源"></a>7.3 监视多个数据源</h3><p>监视 reactive 类型的数据源：</p>
+<ol>
+<li>const state = reactive({ count: 0, name: ‘zs’ })</li>
+<li></li>
+<li>watch(</li>
+<li> [() =&gt; state.count, () =&gt; state.name], // Object.values(toRefs(state)),</li>
+<li> ([count, name], [prevCount, prevName]) =&gt; {</li>
+<li> console.log(count) // 新的 count 值</li>
+<li> console.log(name) // 新的 name 值</li>
+<li> console.log(‘————‘)</li>
+<li> console.log(prevCount) // 旧的 count 值</li>
+<li>console.log(prevName) // 新的 name 值</li>
+<li>},</li>
+<li> {</li>
+<li>  lazy: true // 在 watch 被创建的时候，不执行回调函数中的代码</li>
+<li> }</li>
+<li>) </li>
+<li></li>
+<li>setTimeout(() =&gt; {</li>
+<li> state.count++</li>
+<li> state.name = ‘ls’</li>
+<li>}, 1000)</li>
+</ol>
+<p>监视 ref 类型的数据源：</p>
+<ol>
+<li>const count = ref(0)</li>
+<li>const name = ref(‘zs’)</li>
+<li></li>
+<li>watch(</li>
+<li>  [count, name], // 需要被监视的多个 ref 数据源</li>
+<li>  ([count, name], [prevCount, prevName]) =&gt; {</li>
+<li><pre><code>console.log(count)
+</code></pre>
+</li>
+<li><pre><code>console.log(name)
+</code></pre>
+</li>
+<li><pre><code>console.log(&#39;-------------&#39;)
+</code></pre>
+</li>
+<li><pre><code>console.log(prevCount)
+</code></pre>
+</li>
+<li><pre><code>console.log(prevName)
+</code></pre>
+</li>
+<li>  },</li>
+<li>  {</li>
+<li><pre><code>lazy: true
+</code></pre>
+</li>
+<li>  }</li>
+<li>)</li>
+<li></li>
+<li>setTimeout(() =&gt; {</li>
+<li>  count.value++</li>
+<li>  name.value = ‘xiaomaolv’</li>
+<li>}, 1000)</li>
+</ol>
+<h3 id="7-4-清除监视"><a href="#7-4-清除监视" class="headerlink" title="7.4 清除监视"></a>7.4 清除监视</h3><p>在 setup() 函数内创建的 watch 监视，会在当前组件被销毁的时候自动停止。如果想要明确地停止某个监视，可以调用 watch() 函数的返回值即可，语法如下：</p>
+<ol>
+<li>// 创建监视，并得到 停止函数</li>
+<li>const stop = watch(() =&gt; {</li>
+<li>  /* … */</li>
+<li>})</li>
+<li></li>
+<li>// 调用停止函数，清除对应的监视</li>
+<li>stop()</li>
+<li><h3 id="7-5-在watch中清除无效的异步任务"><a href="#7-5-在watch中清除无效的异步任务" class="headerlink" title="7.5 在watch中清除无效的异步任务"></a>7.5 在watch中清除无效的异步任务</h3>有时候，当被 watch 监视的值发生变化时，或 watch 本身被 stop 之后，我们期望能够清除那些无效的异步任务，此时，watch 回调函数中提供了一个 cleanup registrator function 来执行清除的工作。这个清除函数会在如下情况下被调用：</li>
+</ol>
+<ul>
+<li>watch 被重复执行了</li>
+<li>watch 被强制 stop 了<h4 id="Template-中的代码示例如下："><a href="#Template-中的代码示例如下：" class="headerlink" title="Template 中的代码示例如下："></a>Template 中的代码示例如下：</h4></li>
+</ul>
+<ol>
+<li>/* template 中的代码 */ <input type="text" v-model="keywords" /></li>
+</ol>
+<h4 id="Script-中的代码示例如下："><a href="#Script-中的代码示例如下：" class="headerlink" title="Script 中的代码示例如下："></a>Script 中的代码示例如下：</h4><ol>
+<li>// 定义响应式数据 keywords</li>
+<li>const keywords = ref(‘’)</li>
+<li></li>
+<li>// 异步任务：打印用户输入的关键词</li>
+<li>const asyncPrint = val =&gt; {</li>
+<li>  // 延时 1 秒后打印</li>
+<li>  return setTimeout(() =&gt; {</li>
+<li><pre><code>console.log(val)
+</code></pre>
+</li>
+<li>  }, 1000)</li>
+<li>}</li>
+<li></li>
+<li>// 定义 watch 监听</li>
+<li>watch(</li>
+<li>  keywords,</li>
+<li>  (keywords, prevKeywords, onCleanup) =&gt; {</li>
+<li><pre><code>// 执行异步任务，并得到关闭异步任务的 timerId
+</code></pre>
+</li>
+<li><pre><code>const timerId = asyncPrint(keywords)
+</code></pre>
+</li>
+<li></li>
+<li><pre><code>// 如果 watch 监听被重复执行了，则会先清除上次未完成的异步任务
+</code></pre>
+</li>
+<li><pre><code>onCleanup(() =&gt; clearTimeout(timerId))
+</code></pre>
+</li>
+<li>  },</li>
+<li>  // watch 刚被创建的时候不执行</li>
+<li>  { lazy: true }</li>
+<li>)</li>
+<li></li>
+<li>// 把 template 中需要的数据 return 出去</li>
+<li>return {</li>
+<li>  keywords</li>
+<li>}</li>
+</ol>
+<h2 id="8-LifeCycle-Hooks"><a href="#8-LifeCycle-Hooks" class="headerlink" title="8.LifeCycle Hooks"></a>8.LifeCycle Hooks</h2><p>新版的生命周期函数，可以按需导入到组件中，且只能在 setup() 函数中使用，代码示例如下：</p>
+<ol>
+<li>import { onMounted, onUpdated, onUnmounted } from ‘@vue/composition-api’</li>
+<li></li>
+<li>const MyComponent = {</li>
+<li>  setup() {</li>
+<li><pre><code>onMounted(() =&gt; &#123;
+</code></pre>
+</li>
+<li><pre><code>  console.log(&#39;mounted!&#39;)
+</code></pre>
+</li>
+<li><pre><code>&#125;)
+</code></pre>
+</li>
+<li><pre><code>onUpdated(() =&gt; &#123;
+</code></pre>
+</li>
+<li><pre><code>  console.log(&#39;updated!&#39;)
+</code></pre>
+</li>
+<li><pre><code>&#125;)
+</code></pre>
+</li>
+<li><pre><code>onUnmounted(() =&gt; &#123;
+</code></pre>
+</li>
+<li><pre><code>  console.log(&#39;unmounted!&#39;)
+</code></pre>
+</li>
+<li><pre><code>&#125;)
+</code></pre>
+</li>
+<li>  }</li>
+<li>}</li>
+</ol>
+<p>下面的列表，是 vue 2.x 的生命周期函数与新版 Composition API 之间的映射关系：</p>
+<ul>
+<li>beforeCreate -&gt; use setup()</li>
+<li>created -&gt; use setup()</li>
+<li>beforeMount -&gt; onBeforeMount</li>
+<li>mounted -&gt; onMounted</li>
+<li>beforeUpdate -&gt; onBeforeUpdate</li>
+<li>updated -&gt; onUpdated</li>
+<li>beforeDestroy -&gt; onBeforeUnmount</li>
+<li>destroyed -&gt; onUnmounted</li>
+<li>errorCaptured -&gt; onErrorCaptured<h2 id="9-provide-amp-inject"><a href="#9-provide-amp-inject" class="headerlink" title="9. provide &amp; inject"></a>9. provide &amp; inject</h2>provide() 和 inject() 可以实现嵌套组件之间的数据传递。这两个函数只能在 setup() 函数中使用。父级组件中使用 provide() 函数向下传递数据；子级组件中使用 inject() 获取上层传递过来的数据。</li>
+</ul>
+<h3 id="9-1-共享普通数据"><a href="#9-1-共享普通数据" class="headerlink" title="9.1 共享普通数据"></a>9.1 共享普通数据</h3><p>App.vue 根组件：</p>
+<template>
+   <div id="app">
+     <h1>App 根组件</h1>
+    <hr />
+    <LevelOne />
+  </div>
+</template>
+
+<script>
+import LevelOne from './components/LevelOne'
+ // 1. 按需导入 provide
+import { provide } from '@vue/composition-api'
+
+export default {
+  name: 'app',
+  setup() {
+    // 2. App 根组件作为父级组件，通过 provide 函数向子级组件共享数据（不限层级）
+    //    provide('要共享的数据名称', 被共享的数据)
+    provide('globalColor', 'red')
+  },
+  components: {
+    LevelOne
+  }
+}
+</script>
+
+
+
+<p>LevelOne.vue 组件：</p>
+<template>
+  <div>
+    <!-- 4. 通过属性绑定，为标签设置字体颜色 -->
+    <h3 :style="{color: themeColor}">Level One</h3>
+    <hr />
+    <LevelTwo />
+  </div>
+</template>
+
+<script>
+import LevelTwo from './LevelTwo'
+// 1. 按需导入 inject
+import { inject } from '@vue/composition-api'
+
+export default {
+  setup() {
+    // 2. 调用 inject 函数时，通过指定的数据名称，获取到父级共享的数据
+    const themeColor = inject('globalColor')
+
+    // 3. 把接收到的共享数据 return 给 Template 使用
+    return {
+      themeColor
+    }
+  },
+  components: {
+    LevelTwo
+  }
+}
+</script>
+
+<p>LevelTwo.vue 组件：</p>
+<template>
+  <div>
+    <!-- 4. 通过属性绑定，为标签设置字体颜色 -->
+    <h5 :style="{color: themeColor}">Level Two</h5>
+  </div>
+</template>
+
+<script>
+// 1. 按需导入 inject
+import { inject } from '@vue/composition-api'
+
+export default {
+  setup() {
+    // 2. 调用 inject 函数时，通过指定的数据名称，获取到父级共享的数据
+    const themeColor = inject('globalColor')
+
+    // 3. 把接收到的共享数据 return 给 Template 使用
+    return {
+      themeColor
+    }
+  }
+}
+</script>
+
+<h3 id="9-2-共享ref-响应式数据"><a href="#9-2-共享ref-响应式数据" class="headerlink" title="9.2 共享ref 响应式数据"></a>9.2 共享ref 响应式数据</h3><p>如下代码实现了点按钮切换主题颜色的功能，主要修改了 App.vue 组件中的代码，LevelOne.vue 和 LevelTwo.vue 中的代码不受任何改变：</p>
+<template>
+  <div id="app">
+    <h1>App 根组件</h1>
+
+<pre><code>&lt;!-- 点击 App.vue 中的按钮，切换子组件中文字的颜色 --&gt;
+&lt;button @click=&quot;themeColor=&#39;red&#39;&quot;&gt;红色&lt;/button&gt;
+&lt;button @click=&quot;themeColor=&#39;blue&#39;&quot;&gt;蓝色&lt;/button&gt;
+&lt;button @click=&quot;themeColor=&#39;orange&#39;&quot;&gt;橘黄色&lt;/button&gt;
+
+&lt;hr /&gt;
+&lt;LevelOne /&gt;
+</code></pre>
+  </div>
+</template>
+
+<script>
+import LevelOne from './components/LevelOne'
+import { provide, ref } from '@vue/composition-api'
+
+export default {
+  name: 'app',
+  setup() {
+    // 定义 ref 响应式数据
+    const themeColor = ref('red')
+
+    // 把 ref 数据通过 provide 提供的子组件使用
+    provide('globalColor', themeColor)
+
+    // setup 中 return 数据供当前组件的 Template 使用
+    return {
+      themeColor
+    }
+  },
+  components: {
+    LevelOne
+  }
+}
+</script>
+
+
+<h2 id="10-template-refs"><a href="#10-template-refs" class="headerlink" title="10. template refs"></a>10. template refs</h2><p>通过 ref() 还可以引用页面上的元素或组件。</p>
+<h3 id="10-1-元素的引用"><a href="#10-1-元素的引用" class="headerlink" title="10.1 元素的引用"></a>10.1 元素的引用</h3><template>
+   <div>
+    <h3 ref="h3Ref">TemplateRefOne</h3>
+  </div>
+</template>
+
+<script>
+import { ref, onMounted } from '@vue/composition-api'
+
+export default {
+  setup() {
+    // 创建一个 DOM 引用
+    const h3Ref = ref(null)
+
+    // 在 DOM 首次加载完毕之后，才能获取到元素的引用
+    onMounted(() => {
+      // 为 dom 元素设置字体颜色
+      // h3Ref.value 是原生DOM对象
+      h3Ref.value.style.color = 'red'
+    })
+
+    // 把创建的引用 return 出去
+    return {
+      h3Ref
+    }
+  }
+}
+</script>
+
+<h3 id="10-2-组件的引用"><a href="#10-2-组件的引用" class="headerlink" title="10.2 组件的引用"></a>10.2 组件的引用</h3><p>TemplateRefOne.vue 中的示例代码如下：</p>
+<template>
+  <div>
+    <h3>TemplateRefOne</h3>
+
+<pre><code>&lt;!-- 4. 点击按钮展示子组件的 count 值 --&gt;
+&lt;button @click=&quot;showNumber&quot;&gt;获取TemplateRefTwo中的count值&lt;/button&gt;
+
+&lt;hr /&gt;
+&lt;!-- 3. 为组件添加 ref 引用 --&gt;
+&lt;TemplateRefTwo ref=&quot;comRef&quot; /&gt;
+</code></pre>
+  </div>
+</template>
+
+<script>
+import { ref } from '@vue/composition-api'
+import TemplateRefTwo from './TemplateRefTwo'
+
+export default {
+  setup() {
+    // 1. 创建一个组件的 ref 引用
+    const comRef = ref(null)
+
+    // 5. 展示子组件中 count 的值
+    const showNumber = () => {
+      console.log(comRef.value.count)
+    }
+
+    // 2. 把创建的引用 return 出去
+    return {
+      comRef,
+      showNumber
+    }
+  },
+  components: {
+    TemplateRefTwo
+  }
+}
+</script>
+
+<p>TemplateRefTwo.vue 中的示例代码：</p>
+<ol>
+<li>import { ref } from ‘@vue/composition-api’</li>
+<li></li>
+<li>export default {</li>
+<li>  setup() {</li>
+<li><pre><code>// 1. 定义响应式的数据
+</code></pre>
+</li>
+<li><pre><code>const count = ref(0)
+</code></pre>
+</li>
+<li></li>
+<li><pre><code>// 2. 把响应式数据 return 给 Template 使用
+</code></pre>
+</li>
+<li><pre><code>return &#123;
+</code></pre>
+</li>
+<li><pre><code>  count
+</code></pre>
+</li>
+<li><pre><code>&#125;
+</code></pre>
+</li>
+<li>  }</li>
+<li>}<br></script></li>
+</ol>
+<h2 id="11-createComponent"><a href="#11-createComponent" class="headerlink" title="11.createComponent"></a>11.createComponent</h2><p>这个函数不是必须的，除非你想要完美结合 TypeScript 提供的类型推断来进行项目的开发。</p>
+<p>这个函数仅仅提供了类型推断，方便在结合 TypeScript 书写代码时，能为 setup() 中的 props 提供完整的类型推断。</p>
+<ol>
+<li>import { createComponent } from ‘vue’</li>
+<li></li>
+<li>export default createComponent({</li>
+<li>  props: {</li>
+<li><pre><code>foo: String
+</code></pre>
+</li>
+<li>  },</li>
+<li>  setup(props) {</li>
+<li><pre><code>props.foo // &lt;- type: string
+</code></pre>
+</li>
+<li>  }</li>
+<li>})</li>
+</ol>
+
                 
             </div>
             <hr/>
@@ -490,7 +1190,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://nhnjs.github.io/2021/051216107.html">http://nhnjs.github.io/2021/051216107.html</a>
+                    <a href="http://nhnjs.github.io/2021/05124429.html">http://nhnjs.github.io/2021/05124429.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -527,7 +1227,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/vue3/">
+                                    <span class="chip bg-color">vue3</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -696,7 +1400,7 @@
         repo: 'nhnjs.github.io',
         owner: 'nhnjs',
         admin: "nhnjs",
-        id: '2021-05-12T00-29-51',
+        id: '2021-05-12T11-51-50',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -724,9 +1428,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/05124429.html">
                     <div class="card-image">
@@ -744,9 +1449,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -755,6 +1460,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -770,7 +1476,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2021/051216107.html">
@@ -800,7 +1506,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
