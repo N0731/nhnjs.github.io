@@ -579,9 +579,9 @@
 <li>在 template 中访问响应式数据：</li>
 </ul>
 <ol>
-<li><template></li>
+<li><template></template></li>
 <li> <p> --- </p></li>
-<li></template></li>
+<li></li>
 </ol>
 <h2 id="3-3-在-reactive-对象中访问-ref-创建的响应式数据"><a href="#3-3-在-reactive-对象中访问-ref-创建的响应式数据" class="headerlink" title="3.3 在 reactive 对象中访问 ref 创建的响应式数据"></a>3.3 在 reactive 对象中访问 ref 创建的响应式数据</h2><p>当把 ref() 创建出来的响应式数据对象，挂载到 reactive() 上时，会自动把响应式数据对象展开为原始的值，不需通过 .value 就可以直接被访问，例如：</p>
 <ol>
@@ -834,7 +834,7 @@
 <li>watch 被强制 stop 了<h4 id="Template-中的代码示例如下："><a href="#Template-中的代码示例如下：" class="headerlink" title="Template 中的代码示例如下："></a>Template 中的代码示例如下：</h4></li>
 </ul>
 <ol>
-<li>/* template 中的代码 */ <input type="text" v-model="keywords" /></li>
+<li>/* template 中的代码 */ <input type="text" v-model="keywords"></li>
 </ol>
 <h4 id="Script-中的代码示例如下："><a href="#Script-中的代码示例如下：" class="headerlink" title="Script 中的代码示例如下："></a>Script 中的代码示例如下：</h4><ol>
 <li>// 定义响应式数据 keywords</li>
@@ -929,9 +929,9 @@
 <template>
    <div id="app">
      <h1>App 根组件</h1>
-    <hr />
-    <LevelOne />
-  </div>
+    <hr>
+    <LevelOne>
+  </LevelOne></div>
 </template>
 
 <script>
@@ -959,9 +959,9 @@ export default {
   <div>
     <!-- 4. 通过属性绑定，为标签设置字体颜色 -->
     <h3 :style="{color: themeColor}">Level One</h3>
-    <hr />
-    <LevelTwo />
-  </div>
+    <hr>
+    <LevelTwo>
+  </LevelTwo></div>
 </template>
 
 <script>
@@ -1148,7 +1148,7 @@ export default {
 </code></pre>
 </li>
 <li>  }</li>
-<li>}<br></script></li>
+<li>}<br></li>
 </ol>
 <h2 id="11-createComponent"><a href="#11-createComponent" class="headerlink" title="11.createComponent"></a>11.createComponent</h2><p>这个函数不是必须的，除非你想要完美结合 TypeScript 提供的类型推断来进行项目的开发。</p>
 <p>这个函数仅仅提供了类型推断，方便在结合 TypeScript 书写代码时，能为 setup() 中的 props 提供完整的类型推断。</p>
@@ -1735,13 +1735,13 @@ export default {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/051335783.html">
+                <a href="/2021/051326278.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="vue3+vite 创建项目">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="vue3+vite创建项目">
                         
-                        <span class="card-title">vue3+vite 创建项目</span>
+                        <span class="card-title">vue3+vite创建项目</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
