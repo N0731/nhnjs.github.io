@@ -473,180 +473,231 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="vue3-vite创建项目"><a href="#vue3-vite创建项目" class="headerlink" title="vue3+vite创建项目"></a>vue3+vite创建项目</h1><h2 id="1-全局安装create-vite-app"><a href="#1-全局安装create-vite-app" class="headerlink" title="1. 全局安装create-vite-app"></a>1. 全局安装create-vite-app</h2><ol>
-<li>yarn global add <a href="mailto:&#x63;&#114;&#x65;&#x61;&#x74;&#x65;&#x2d;&#118;&#105;&#x74;&#101;&#45;&#x61;&#112;&#x70;&#64;&#49;&#46;&#x31;&#56;&#46;&#48;">&#x63;&#114;&#x65;&#x61;&#x74;&#x65;&#x2d;&#118;&#105;&#x74;&#101;&#45;&#x61;&#112;&#x70;&#64;&#49;&#46;&#x31;&#56;&#46;&#48;</a><h2 id="2-创建项目目录"><a href="#2-创建项目目录" class="headerlink" title="2.创建项目目录"></a>2.创建项目目录</h2><blockquote>
-</blockquote>
-<ol>
-<li>cva vue3-ui</li>
-<li>或者</li>
-<li>create-vite-app vue3-ui   <h2 id="Vue-2-和-Vue-3-的区别"><a href="#Vue-2-和-Vue-3-的区别" class="headerlink" title="Vue 2 和 Vue 3 的区别"></a>Vue 2 和 Vue 3 的区别</h2>90% 的写法完全一致，除了以下几点</li>
+<li>yarn global add <a href="mailto:&#99;&#x72;&#101;&#97;&#116;&#x65;&#45;&#x76;&#x69;&#x74;&#101;&#45;&#x61;&#112;&#x70;&#x40;&#x31;&#x2e;&#49;&#56;&#x2e;&#48;">&#99;&#x72;&#101;&#97;&#116;&#x65;&#45;&#x76;&#x69;&#x74;&#101;&#45;&#x61;&#112;&#x70;&#x40;&#x31;&#x2e;&#49;&#56;&#x2e;&#48;</a></li>
 </ol>
-</li>
-</ol>
+<h2 id="2-创建项目目录"><a href="#2-创建项目目录" class="headerlink" title="2.创建项目目录"></a>2.创建项目目录</h2><pre><code> cva vue3-ui
+ 或者
+ create-vite-app vue3-ui    
+</code></pre>
+<h2 id="Vue-2-和-Vue-3-的区别"><a href="#Vue-2-和-Vue-3-的区别" class="headerlink" title="Vue 2 和 Vue 3 的区别"></a>Vue 2 和 Vue 3 的区别</h2><p>90% 的写法完全一致，除了以下几点</p>
 <ul>
 <li>Vue 3 的 Template 支持多个根标签，Vue 2 不支持</li>
 <li>Vue 3 有 createApp()，而 Vue 2 的是 new Vue()</li>
-<li>createApp(组件)，new Vue({template, render})<h2 id="3-引入Vue-Router4"><a href="#3-引入Vue-Router4" class="headerlink" title="3.引入Vue Router4"></a>3.引入Vue Router4</h2><h3 id="3-1-使用命令行查看vue-router-所有版本号"><a href="#3-1-使用命令行查看vue-router-所有版本号" class="headerlink" title="3.1. 使用命令行查看vue-router 所有版本号"></a>3.1. 使用命令行查看vue-router 所有版本号</h3></li>
+<li>createApp(组件)，new Vue({template, render})</li>
 </ul>
-<ol>
+<h2 id="3-引入Vue-Router4"><a href="#3-引入Vue-Router4" class="headerlink" title="3.引入Vue Router4"></a>3.引入Vue Router4</h2><p><img src="https://upload-images.jianshu.io/upload_images/14361446-941f16dd29940f03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" alt="avatar"></p>
+<h3 id="3-1-使用命令行查看vue-router-所有版本号"><a href="#3-1-使用命令行查看vue-router-所有版本号" class="headerlink" title="3.1. 使用命令行查看vue-router 所有版本号"></a>3.1. 使用命令行查看vue-router 所有版本号</h3><ol>
 <li>npm info vue-router versions</li>
 </ol>
-<h3 id="安装最新的-x76-117-x65-45-114-111-x75-116-x65-x72-x40-x34-x2e-x30-46-48-x2d-98-101-116-97-x2e-x36"><a href="#安装最新的-x76-117-x65-45-114-111-x75-116-x65-x72-x40-x34-x2e-x30-46-48-x2d-98-101-116-97-x2e-x36" class="headerlink" title="安装最新的&#x76;&#117;&#x65;&#45;&#114;&#111;&#x75;&#116;&#x65;&#x72;&#x40;&#x34;&#x2e;&#x30;&#46;&#48;&#x2d;&#98;&#101;&#116;&#97;&#x2e;&#x36;"></a>安装最新的<a href="mailto:&#x76;&#117;&#x65;&#45;&#114;&#111;&#x75;&#116;&#x65;&#x72;&#x40;&#x34;&#x2e;&#x30;&#46;&#48;&#x2d;&#98;&#101;&#116;&#97;&#x2e;&#x36;">&#x76;&#117;&#x65;&#45;&#114;&#111;&#x75;&#116;&#x65;&#x72;&#x40;&#x34;&#x2e;&#x30;&#46;&#48;&#x2d;&#98;&#101;&#116;&#97;&#x2e;&#x36;</a></h3><ol>
-<li>yarn add <a href="mailto:&#118;&#x75;&#x65;&#x2d;&#x72;&#x6f;&#x75;&#116;&#x65;&#114;&#x40;&#52;&#x2e;&#48;&#x2e;&#48;&#45;&#x62;&#101;&#x74;&#x61;&#46;&#54;">&#118;&#x75;&#x65;&#x2d;&#x72;&#x6f;&#x75;&#116;&#x65;&#114;&#x40;&#52;&#x2e;&#48;&#x2e;&#48;&#45;&#x62;&#101;&#x74;&#x61;&#46;&#54;</a><h3 id="3-2-初始化vue-router"><a href="#3-2-初始化vue-router" class="headerlink" title="3.2. 初始化vue-router"></a>3.2. 初始化vue-router</h3><h4 id="1-新建-history-对象"><a href="#1-新建-history-对象" class="headerlink" title="(1).新建 history 对象"></a>(1).新建 history 对象</h4></li>
-<li>import {createWebHashHistory, createRouter} from ‘vue-router’</li>
-<li>const history = createWebHashHistory()<h4 id="2-新建-router-对象"><a href="#2-新建-router-对象" class="headerlink" title="(2). 新建 router 对象"></a>(2). 新建 router 对象</h4></li>
-<li>const router = createRouter()<h4 id="3-引入typescript"><a href="#3-引入typescript" class="headerlink" title="(3)引入typescript"></a>(3)引入typescript</h4>把main.js文件改为main.ts，我们会发现有很多报错<br><br>报错1：createRouter里面需要传入一个参数，但我们却传入了0个<br><br>解决：<blockquote>
-</blockquote>
-  const router = createRouter({<pre><code>  history,
-  routes: [
-  &#123; path: &#39;/&#39;, component: Lifa &#125;
- ]
-</code></pre>
-  })<blockquote>
-</blockquote>
-</li>
+<h3 id="安装最新的-118-117-101-x2d-x72-111-x75-116-x65-114-x40-x34-x2e-48-46-x30-x2d-x62-101-x74-x61-x2e-x36"><a href="#安装最新的-118-117-101-x2d-x72-111-x75-116-x65-114-x40-x34-x2e-48-46-x30-x2d-x62-101-x74-x61-x2e-x36" class="headerlink" title="安装最新的&#118;&#117;&#101;&#x2d;&#x72;&#111;&#x75;&#116;&#x65;&#114;&#x40;&#x34;&#x2e;&#48;&#46;&#x30;&#x2d;&#x62;&#101;&#x74;&#x61;&#x2e;&#x36;"></a>安装最新的<a href="mailto:&#118;&#117;&#101;&#x2d;&#x72;&#111;&#x75;&#116;&#x65;&#114;&#x40;&#x34;&#x2e;&#48;&#46;&#x30;&#x2d;&#x62;&#101;&#x74;&#x61;&#x2e;&#x36;">&#118;&#117;&#101;&#x2d;&#x72;&#111;&#x75;&#116;&#x65;&#114;&#x40;&#x34;&#x2e;&#48;&#46;&#x30;&#x2d;&#x62;&#101;&#x74;&#x61;&#x2e;&#x36;</a></h3><ol>
+<li>yarn add <a href="mailto:&#118;&#x75;&#x65;&#x2d;&#114;&#x6f;&#x75;&#116;&#x65;&#x72;&#64;&#x34;&#46;&#x30;&#46;&#48;&#x2d;&#x62;&#x65;&#116;&#97;&#x2e;&#x36;">&#118;&#x75;&#x65;&#x2d;&#114;&#x6f;&#x75;&#116;&#x65;&#x72;&#64;&#x34;&#46;&#x30;&#46;&#48;&#x2d;&#x62;&#x65;&#116;&#97;&#x2e;&#x36;</a></li>
 </ol>
-<p>报错2：.vue类型的文件提示cannot find module xxx.vue<br><br>原因ts只能理解.ts为后缀的文件，无法理解.vue文件<br><br>解决方法:</p>
+<h3 id="3-2-初始化vue-router"><a href="#3-2-初始化vue-router" class="headerlink" title="3.2. 初始化vue-router"></a>3.2. 初始化vue-router</h3><h4 id="1-新建-history-对象"><a href="#1-新建-history-对象" class="headerlink" title="(1).新建 history 对象"></a>(1).新建 history 对象</h4><ol>
+<li>import {createWebHashHistory, createRouter} from ‘vue-router’</li>
+<li>const history = createWebHashHistory()</li>
+</ol>
+<h4 id="2-新建-router-对象"><a href="#2-新建-router-对象" class="headerlink" title="(2). 新建 router 对象"></a>(2). 新建 router 对象</h4><ol>
+<li>const router = createRouter()</li>
+</ol>
+<h4 id="3-引入typescript"><a href="#3-引入typescript" class="headerlink" title="(3)引入typescript"></a>(3)引入typescript</h4><p>把main.js文件改为main.ts，我们会发现有很多报错 报错1：createRouter里面需要传入一个参数，但我们却传入了0个 解决：</p>
+<blockquote>
+</blockquote>
+<pre><code>const router = createRouter(&#123;
+     history,
+     routes: [
+     &#123; path: &#39;/&#39;, component: Lifa &#125;
+    ]
+&#125;)
+</code></pre>
+<blockquote>
+</blockquote>
+<p>报错2：.vue类型的文件提示cannot find module xxx.vue 原因ts只能理解.ts为后缀的文件，无法理解.vue文件 解决方法:</p>
 <ul>
-<li><p>Google 搜索 Vue 3 can not find module</p>
-</li>
-<li><p>创建 xxx.d.ts，告诉 TS 如何理解 .vue 文件</p>
-</li>
-<li><p>src/shims-vue.d.ts</p>
+<li>Google 搜索 Vue 3 can not find module</li>
+<li>创建 xxx.d.ts，告诉 TS 如何理解 .vue 文件</li>
+<li>src/shims-vue.d.ts</li>
+</ul>
 <blockquote>
 </blockquote>
-<p>  declare module ‘*.vue’ {<br>   import { Component } from ‘vue’<br>   const component: Component<br>   export default component<br>  }   </p>
+<pre><code>declare module &#39;*.vue&#39; &#123;
+ import &#123; Component &#125; from &#39;vue&#39;
+ const component: Component
+ export default component
+&#125;   
+</code></pre>
 <blockquote>
 </blockquote>
-<p>这里要注意如果我们用的是vscode这时报错已经没了，但是如果我们用的是webstrom编辑器它还是会<br><br>报同样的错误，我们需要再额外的安装ts，然后初始化ts配置</p>
+<p>这里要注意如果我们用的是vscode这时报错已经没了，但是如果我们用的是webstrom编辑器它还是会 报同样的错误，我们需要再额外的安装ts，然后初始化ts配置</p>
 <blockquote>
 </blockquote>
-<p>  yarn add typescript -D<br>  tsc –init</p>
+<pre><code>yarn add typescript -D
+tsc --init
+</code></pre>
 <blockquote>
 </blockquote>
 <p>这样报错就会解决了</p>
 <h4 id="4-使用router"><a href="#4-使用router" class="headerlink" title="(4)使用router"></a>(4)使用router</h4><blockquote>
-<p>  const app = createApp(App)<br>  app.use(router)<br>  app.mount(‘#app’)</p>
 </blockquote>
-<h4 id="5-添加-router-view"><a href="#5-添加-router-view" class="headerlink" title="(5)添加 router-view"></a>(5)添加 router-view</h4></li>
-<li><p>App.vue</p>
+<pre><code>const app = createApp(App)
+app.use(router)
+app.mount(&#39;#app&#39;)
+</code></pre>
 <blockquote>
 </blockquote>
-  <template>
-    <div>hi</div>
-    <router-view/>
-  </template>
+<h4 id="5-添加-router-view"><a href="#5-添加-router-view" class="headerlink" title="(5)添加 router-view"></a>(5)添加 router-view</h4><ul>
+<li>App.vue</li>
+</ul>
+<blockquote>
+</blockquote>
+<pre><code>&lt;template&gt;
+  &lt;div&gt;hi&lt;/div&gt;
+  &lt;router-view/&gt;
+&lt;/template&gt;
 
-  <script>
-  export default {
-   name: 'App'
-   }
-  </script>
+&lt;script&gt;
+ export default&#123;
+ name: &#39;App&#39;
+&#125;
+&lt;/script&gt;
+</code></pre>
 <blockquote>
 </blockquote>
 <h4 id="6-添加router-link"><a href="#6-添加router-link" class="headerlink" title="(6)添加router-link"></a>(6)添加router-link</h4><blockquote>
-  <div>导航栏 |
-   <router-link to="/">lifa</router-link>
-   <router-link to="xxx">lifa2</router-link>
-  </div>
-
+</blockquote>
+<pre><code>&lt;div&gt;导航栏 |
+ &lt;router-link to=&quot;/&quot;&gt;lifa&lt;/router-link&gt;
+ &lt;router-link to=&quot;xxx&quot;&gt;lifa2&lt;/router-link&gt;
+&lt;/div&gt;
+</code></pre>
+<blockquote>
 </blockquote>
 <h2 id="3-安装sass"><a href="#3-安装sass" class="headerlink" title="3.安装sass"></a>3.安装sass</h2><blockquote>
-<p>  yarn add sass</p>
 </blockquote>
-<p>发现控制台报错<br></p>
-</li>
-</ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/14361446-e6e1a0ab1ec3ca90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp"></p>
+<pre><code>yarn add sass
+</code></pre>
+<blockquote>
+</blockquote>
+<p>发现控制台报错 <img src="https://upload-images.jianshu.io/upload_images/14361446-e6e1a0ab1ec3ca90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" alt="img"></p>
 <p>解决方法：</p>
-<h3 id="4-1-打开package-json"><a href="#4-1-打开package-json" class="headerlink" title="4.1 打开package.json"></a>4.1 打开package.json</h3><h3 id="4-2-把dependencies里的sass这一行，移到devDependencies"><a href="#4-2-把dependencies里的sass这一行，移到devDependencies" class="headerlink" title="4.2. 把dependencies里的sass这一行，移到devDependencies"></a>4.2. 把dependencies里的sass这一行，移到devDependencies</h3><h3 id="4-3-重新运行yarn-install"><a href="#4-3-重新运行yarn-install" class="headerlink" title="4.3. 重新运行yarn install"></a>4.3. 重新运行yarn install</h3><h2 id="5-使用provide和inject实现父子组件通信"><a href="#5-使用provide和inject实现父子组件通信" class="headerlink" title="5. 使用provide和inject实现父子组件通信"></a>5. 使用provide和inject实现父子组件通信</h2><h3 id="5-1-在父组件里使用provide提供一个变量值，provide第一个参数是变量名，第二个是对应的值"><a href="#5-1-在父组件里使用provide提供一个变量值，provide第一个参数是变量名，第二个是对应的值" class="headerlink" title="5.1. 在父组件里使用provide提供一个变量值，provide第一个参数是变量名，第二个是对应的值"></a>5.1. 在父组件里使用provide提供一个变量值，provide第一个参数是变量名，第二个是对应的值</h3><ul>
-<li>App.vue<blockquote>
-</blockquote>
-  <script lang="ts">
-   import { ref, provide } from 'vue'
-   export default {
-    name: 'App',
-    setup() {
-     const menuVisible = ref(false)
-      provide('xxx', menuVisible)
-    }
-  }
->
-### 5.2. 在子组件里通过inject使用这个变量，括号里的就是你设置的provide的key值</li>
-<li>topnav.vue<blockquote>
-<p>   import { inject, Ref } from ‘vue’<br>   export default {</p>
-<pre><code>name: &#39;TopNav&#39;,
-setup() &#123;
-const menuVisible = inject&lt;Ref&lt;boolean&gt;&gt;(&#39;xxx&#39;)
-console.log(menuVisible.value, &#39;topNav menuvisible&#39;)
-&#125;
-</code></pre>
-<p>  }</p>
-</blockquote>
-<h2 id="6-路由间切换"><a href="#6-路由间切换" class="headerlink" title="6.路由间切换"></a>6.路由间切换</h2></li>
-<li>Doc.vue<blockquote>
-  <li>
-      <router-link to="/doc/switch">Switch 组件</router-link>
-  </li>
-  <main>
-      <router-view></router-view>
-  </main>
-   </blockquote>
-</li>
-<li>mian.ts<blockquote>
-</blockquote>
-  const router = createRouter({<br>   history,<br>   routes: [<pre><code>  &#123; path: &#39;/&#39;, component: Home &#125;,
-  &#123; path: &#39;/doc&#39;, component: Doc, children: [
-    &#123; path: &#39;switch&#39;, component: SwitchDemo &#125;
-  ]
-&#125;
-</code></pre>
-   ]<br>  })<br>  router.afterEach(() =&gt; {<br>   console.log(‘路由切换了’)<br>  })<blockquote>
-</blockquote>
-</li>
+<h3 id="4-1-打开package-json"><a href="#4-1-打开package-json" class="headerlink" title="4.1 打开package.json"></a>4.1 打开package.json</h3><h3 id="4-2-把dependencies里的sass这一行，移到devDependencies"><a href="#4-2-把dependencies里的sass这一行，移到devDependencies" class="headerlink" title="4.2. 把dependencies里的sass这一行，移到devDependencies"></a>4.2. 把dependencies里的sass这一行，移到devDependencies</h3><p><img src="https://upload-images.jianshu.io/upload_images/14361446-8d5014a6e48fa236.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" alt="img"></p>
+<h3 id="4-3-重新运行yarn-install"><a href="#4-3-重新运行yarn-install" class="headerlink" title="4.3. 重新运行yarn install"></a>4.3. 重新运行yarn install</h3><h2 id="5-使用provide和inject实现父子组件通信"><a href="#5-使用provide和inject实现父子组件通信" class="headerlink" title="5. 使用provide和inject实现父子组件通信"></a>5. 使用provide和inject实现父子组件通信</h2><h3 id="5-1-在父组件里使用provide提供一个变量值，provide第一个参数是变量名，第二个是对应的值"><a href="#5-1-在父组件里使用provide提供一个变量值，provide第一个参数是变量名，第二个是对应的值" class="headerlink" title="5.1. 在父组件里使用provide提供一个变量值，provide第一个参数是变量名，第二个是对应的值"></a>5.1. 在父组件里使用provide提供一个变量值，provide第一个参数是变量名，第二个是对应的值</h3><ul>
+<li>App.vue</li>
 </ul>
-<p>实现点击菜单跳转关闭左侧菜单栏<br><br>我们需要在路由离开的时候将menuVisible的值设为false，但是我们在main.ts里拿不到<br>menuVisible这个变量，那如果我们把router.afterEach放在App里就可以访问这个变量了，但是<br>这样的话App里又访问不到我们的router了，所以我们需要单独构建一个router.ts文件</p>
+<blockquote>
+</blockquote>
+<pre><code>&lt;script lang=&quot;ts&quot;&gt;
+ import &#123; ref, provide &#125; from &#39;vue&#39;
+ export default &#123;
+  name: &#39;App&#39;,
+  setup() &#123;
+   const menuVisible = ref(false)
+    provide(&#39;xxx&#39;, menuVisible)
+  &#125;
+&#125;
+</code></pre>
+<blockquote>
+</blockquote>
+<h3 id="5-2-在子组件里通过inject使用这个变量，括号里的就是你设置的provide的key值"><a href="#5-2-在子组件里通过inject使用这个变量，括号里的就是你设置的provide的key值" class="headerlink" title="5.2. 在子组件里通过inject使用这个变量，括号里的就是你设置的provide的key值"></a>5.2. 在子组件里通过inject使用这个变量，括号里的就是你设置的provide的key值</h3><ul>
+<li>topnav.vue</li>
+</ul>
+<blockquote>
+</blockquote>
+<pre><code> import &#123; inject, Ref &#125; from &#39;vue&#39;
+ export default &#123;
+  name: &#39;TopNav&#39;,
+  setup() &#123;
+  const menuVisible = inject&lt;Ref&lt;boolean&gt;&gt;(&#39;xxx&#39;)
+  console.log(menuVisible.value, &#39;topNav menuvisible&#39;)
+  &#125;
+&#125;
+</code></pre>
+<blockquote>
+</blockquote>
+<h2 id="6-路由间切换"><a href="#6-路由间切换" class="headerlink" title="6.路由间切换"></a>6.路由间切换</h2><ul>
+<li>Doc.vue</li>
+</ul>
+<blockquote>
+</blockquote>
+<pre><code>&lt;li&gt;
+    &lt;router-link to=&quot;/doc/switch&quot;&gt;Switch 组件&lt;/router-link&gt;
+&lt;/li&gt;
+&lt;main&gt;
+    &lt;router-view&gt;&lt;/router-view&gt;
+&lt;/main&gt;
+</code></pre>
+<blockquote>
+</blockquote>
 <ul>
-<li><p>router.ts</p>
-<blockquote>
-</blockquote>
-<p>  import {createWebHashHistory, createRouter} from ‘vue-router’<br>  import Home from ‘./views/Home.vue’<br>  import Doc from ‘./views/Doc.vue’<br>  import SwitchDemo from ‘./views/SwitchDemo.vue’</p>
-<pre><code>const history = createWebHashHistory()
-export const router = createRouter(&#123;
-  history,
-  routes: [
-      &#123; path: &#39;/&#39;, component: Home &#125;,
-      &#123; path: &#39;/doc&#39;, component: Doc, children: [
-      &#123; path: &#39;switch&#39;, component: SwitchDemo &#125;
-  ]
-&#125;
-</code></pre>
-<p>   ]<br>  })</p>
-<blockquote>
-</blockquote>
-</li>
-<li><p>App.vue</p>
-<blockquote>
-</blockquote>
-<p>   import { router } from “./router”;<br>   setup() {</p>
-<pre><code>  const width = document.documentElement.clientWidth
-  const menuVisible = ref(width &gt; 500 ? true : false)
-  provide(&#39;xxx&#39;, menuVisible)
-+   router.afterEach(() =&gt; &#123;
-+      menuVisible.value = false
-+    &#125;)
- &#125;
-</code></pre>
-<blockquote>
-</blockquote>
-</li>
-<li><p>main.ts</p>
-<blockquote>
-</blockquote>
-<p>  import {router} from ‘./router’<br>  const app = createApp(App)<br>  app.use(router)</p>
-<blockquote>
-</blockquote>
-</li>
+<li>mian.ts</li>
 </ul>
+<blockquote>
+</blockquote>
+<pre><code>const router = createRouter(&#123;
+ history,
+ routes: [
+    &#123; path: &#39;/&#39;, component: Home &#125;,
+    &#123; path: &#39;/doc&#39;, component: Doc, children: [
+      &#123; path: &#39;switch&#39;, component: SwitchDemo &#125;
+    ]
+  &#125;
+ ]
+&#125;)
+router.afterEach(() =&gt; &#123;
+ console.log(&#39;路由切换了&#39;)
+&#125;)
+</code></pre>
+<blockquote>
+</blockquote>
+<p>实现点击菜单跳转关闭左侧菜单栏 我们需要在路由离开的时候将menuVisible的值设为false，但是我们在main.ts里拿不到 menuVisible这个变量，那如果我们把router.afterEach放在App里就可以访问这个变量了，但是 这样的话App里又访问不到我们的router了，所以我们需要单独构建一个router.ts文件</p>
+<ul>
+<li>router.ts</li>
+</ul>
+<blockquote>
+</blockquote>
+<pre><code>import &#123;createWebHashHistory, createRouter&#125; from &#39;vue-router&#39;
+import Home from &#39;./views/Home.vue&#39;
+import Doc from &#39;./views/Doc.vue&#39;
+import SwitchDemo from &#39;./views/SwitchDemo.vue&#39;
+  const history = createWebHashHistory()
+  export const router = createRouter(&#123;
+    history,
+    routes: [
+        &#123; path: &#39;/&#39;, component: Home &#125;,
+        &#123; path: &#39;/doc&#39;, component: Doc, children: [
+        &#123; path: &#39;switch&#39;, component: SwitchDemo &#125;
+    ]
+  &#125;
+ ]
+&#125;)
+</code></pre>
+<blockquote>
+</blockquote>
+<ul>
+<li>App.vue</li>
+</ul>
+<blockquote>
+</blockquote>
+<pre><code> import &#123; router &#125; from &quot;./router&quot;;
+ setup() &#123;
+    const width = document.documentElement.clientWidth
+    const menuVisible = ref(width &gt; 500 ? true : false)
+    provide(&#39;xxx&#39;, menuVisible)
+  +   router.afterEach(() =&gt; &#123;
+  +      menuVisible.value = false
+  +    &#125;)
+   &#125;
+</code></pre>
+<blockquote>
+</blockquote>
+<ul>
+<li>main.ts</li>
+</ul>
+<blockquote>
+</blockquote>
+<pre><code>import &#123;router&#125; from &#39;./router&#39;
+const app = createApp(App)
+app.use(router)
+</code></pre>
 
                 
             </div>
@@ -1484,13 +1535,13 @@ export const router = createRouter(&#123;
     
 
     <div class="container row center-align"
-         style="margin-bottom: 0px !important;">
+         style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2021</span>
+                <span id="year">2021</span>
             
-            <span id="year">2019</span>
+            <span id="year">2021</span>
             <a href="/about" target="_blank">N</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
@@ -1515,6 +1566,60 @@ export const router = createRouter(&#123;
             <br>
 
             <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2021";
+                        var startMonth = "5";
+                        var startDate = "9";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
             
             <br>
             
