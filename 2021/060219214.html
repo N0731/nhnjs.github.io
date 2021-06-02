@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="vue3+vite创建项目, N的博客">
+    <meta name="keywords" content="你会用到的15个前端小知识, N的博客">
     <meta name="description" content="敲敲敲">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>vue3+vite创建项目 | N的博客</title>
+    <title>你会用到的15个前端小知识 | N的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">vue3+vite创建项目</h1>
+                    <h1 class="description center-align post-title">你会用到的15个前端小知识</h1>
                 </div>
             </div>
         </div>
@@ -435,14 +435,23 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/vue3/">
-                                <span class="chip bg-color">vue3</span>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/">
+                                <span class="chip bg-color">前端优化</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/" class="post-category">
+                                前端优化
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -451,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-13
+                    2021-06-02
                 </div>
                 
 
@@ -472,231 +481,145 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="vue3-vite创建项目"><a href="#vue3-vite创建项目" class="headerlink" title="vue3+vite创建项目"></a>vue3+vite创建项目</h1><h2 id="1-全局安装create-vite-app"><a href="#1-全局安装create-vite-app" class="headerlink" title="1. 全局安装create-vite-app"></a>1. 全局安装create-vite-app</h2><ol>
-<li>yarn global add <a href="mailto:&#x63;&#x72;&#101;&#x61;&#116;&#x65;&#x2d;&#118;&#x69;&#x74;&#101;&#45;&#x61;&#x70;&#x70;&#x40;&#49;&#46;&#x31;&#56;&#x2e;&#48;">&#x63;&#x72;&#101;&#x61;&#116;&#x65;&#x2d;&#118;&#x69;&#x74;&#101;&#45;&#x61;&#x70;&#x70;&#x40;&#49;&#46;&#x31;&#56;&#x2e;&#48;</a></li>
-</ol>
-<h2 id="2-创建项目目录"><a href="#2-创建项目目录" class="headerlink" title="2.创建项目目录"></a>2.创建项目目录</h2><pre><code> cva vue3-ui
- 或者
- create-vite-app vue3-ui    
+                <h1 id="你会用到的-15-个前端小知识"><a href="#你会用到的-15-个前端小知识" class="headerlink" title="你会用到的 15 个前端小知识"></a>你会用到的 15 个前端小知识</h1><h3 id="1-css-一行文本超出…"><a href="#1-css-一行文本超出…" class="headerlink" title="1. css 一行文本超出…"></a>1. css 一行文本超出…</h3><pre><code class="css">overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
 </code></pre>
-<h2 id="Vue-2-和-Vue-3-的区别"><a href="#Vue-2-和-Vue-3-的区别" class="headerlink" title="Vue 2 和 Vue 3 的区别"></a>Vue 2 和 Vue 3 的区别</h2><p>90% 的写法完全一致，除了以下几点</p>
+<h3 id="2-多行文本超出显示…"><a href="#2-多行文本超出显示…" class="headerlink" title="2.多行文本超出显示…"></a>2.多行文本超出显示…</h3><pre><code class="css">display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;
+overflow: hidden;
+</code></pre>
+<h3 id="3-IOS-手机容器滚动条滑动不流畅"><a href="#3-IOS-手机容器滚动条滑动不流畅" class="headerlink" title="3.IOS 手机容器滚动条滑动不流畅"></a>3.IOS 手机容器滚动条滑动不流畅</h3><pre><code class="css">overflow: auto;
+-webkit-overflow-scrolling: touch;
+</code></pre>
+<h3 id="4-修改滚动条样式"><a href="#4-修改滚动条样式" class="headerlink" title="4.修改滚动条样式"></a>4.修改滚动条样式</h3><p>隐藏 div 元素的滚动条</p>
+<pre><code class="css">cdiv::-webkit-scrollbar &#123;``
+    display: none;
+&#125;
+</code></pre>
 <ul>
-<li>Vue 3 的 Template 支持多个根标签，Vue 2 不支持</li>
-<li>Vue 3 有 createApp()，而 Vue 2 的是 new Vue()</li>
-<li>createApp(组件)，new Vue({template, render})</li>
+<li>div::-webkit-scrollbar 滚动条整体部分</li>
+<li>div::-webkit-scrollbar-thumb 滚动条里面的小方块，能向上向下移动（或往左往右移动，取决于是垂直滚动条还是水平滚动条</li>
+<li>div::-webkit-scrollbar-track 滚动条的轨道（里面装有 Thumb</li>
+<li>div::-webkit-scrollbar-button 滚动条的轨道的两端按钮，允许通过点击微调小方块的位置</li>
+<li>div::-webkit-scrollbar-track-piece 内层轨道，滚动条中间部分（除去</li>
+<li>div::-webkit-scrollbar-corner 边角，即两个滚动条的交汇处</li>
+<li>div::-webkit-resizer 两个滚动条的交汇处上用于通过拖动调整元素大小的小控件注意此方案有兼容性问题，一般需要隐藏滚动条时我都是用一个色块通过定位盖上去，或者将子级元素调大，父级元素使用 overflow-hidden 截掉滚动条部分。暴力且直接。</li>
 </ul>
-<h2 id="3-引入Vue-Router4"><a href="#3-引入Vue-Router4" class="headerlink" title="3.引入Vue Router4"></a>3.引入Vue Router4</h2><p><img src="/2021/051326278/1.jpg"></p>
-<h3 id="3-1-使用命令行查看vue-router-所有版本号"><a href="#3-1-使用命令行查看vue-router-所有版本号" class="headerlink" title="3.1. 使用命令行查看vue-router 所有版本号"></a>3.1. 使用命令行查看vue-router 所有版本号</h3><ol>
-<li>npm info vue-router versions</li>
-</ol>
-<h3 id="安装最新的-118-117-101-x2d-114-x6f-x75-x74-101-114-x40-52-46-x30-46-48-x2d-x62-x65-x74-x61-46-54"><a href="#安装最新的-118-117-101-x2d-114-x6f-x75-x74-101-114-x40-52-46-x30-46-48-x2d-x62-x65-x74-x61-46-54" class="headerlink" title="安装最新的&#118;&#117;&#101;&#x2d;&#114;&#x6f;&#x75;&#x74;&#101;&#114;&#x40;&#52;&#46;&#x30;&#46;&#48;&#x2d;&#x62;&#x65;&#x74;&#x61;&#46;&#54;"></a>安装最新的<a href="mailto:&#118;&#117;&#101;&#x2d;&#114;&#x6f;&#x75;&#x74;&#101;&#114;&#x40;&#52;&#46;&#x30;&#46;&#48;&#x2d;&#x62;&#x65;&#x74;&#x61;&#46;&#54;">&#118;&#117;&#101;&#x2d;&#114;&#x6f;&#x75;&#x74;&#101;&#114;&#x40;&#52;&#46;&#x30;&#46;&#48;&#x2d;&#x62;&#x65;&#x74;&#x61;&#46;&#54;</a></h3><ol>
-<li>yarn add <a href="mailto:&#118;&#117;&#101;&#x2d;&#x72;&#x6f;&#x75;&#116;&#101;&#114;&#64;&#x34;&#x2e;&#48;&#x2e;&#48;&#x2d;&#98;&#101;&#116;&#97;&#46;&#54;">&#118;&#117;&#101;&#x2d;&#x72;&#x6f;&#x75;&#116;&#101;&#114;&#64;&#x34;&#x2e;&#48;&#x2e;&#48;&#x2d;&#98;&#101;&#116;&#97;&#46;&#54;</a></li>
-</ol>
-<h3 id="3-2-初始化vue-router"><a href="#3-2-初始化vue-router" class="headerlink" title="3.2. 初始化vue-router"></a>3.2. 初始化vue-router</h3><h4 id="1-新建-history-对象"><a href="#1-新建-history-对象" class="headerlink" title="(1).新建 history 对象"></a>(1).新建 history 对象</h4><ol>
-<li>import {createWebHashHistory, createRouter} from ‘vue-router’</li>
-<li>const history = createWebHashHistory()</li>
-</ol>
-<h4 id="2-新建-router-对象"><a href="#2-新建-router-对象" class="headerlink" title="(2). 新建 router 对象"></a>(2). 新建 router 对象</h4><ol>
-<li>const router = createRouter()</li>
-</ol>
-<h4 id="3-引入typescript"><a href="#3-引入typescript" class="headerlink" title="(3)引入typescript"></a>(3)引入typescript</h4><p>把main.js文件改为main.ts，我们会发现有很多报错 报错1：createRouter里面需要传入一个参数，但我们却传入了0个 解决：</p>
-<blockquote>
-</blockquote>
-<pre><code>const router = createRouter(&#123;
-     history,
-     routes: [
-     &#123; path: &#39;/&#39;, component: Lifa &#125;
-    ]
-&#125;)
+<h3 id="5-使用-css-写出一个三角形角标"><a href="#5-使用-css-写出一个三角形角标" class="headerlink" title="5.使用 css 写出一个三角形角标"></a>5.使用 css 写出一个三角形角标</h3><p>元素宽高设置为 0，通过 border 属性来设置，让其它三个方向的 border 颜色为透明或者和背景色保持一致，剩余一条 border 的颜色设置为需要的颜色。</p>
+<pre><code class="css">div &#123;
+    width: 0;
+    height: 0;
+    border: 5px solid #transparent;
+    border-top-color: red;
+&#125;
 </code></pre>
-<blockquote>
-</blockquote>
-<p>报错2：.vue类型的文件提示cannot find module xxx.vue 原因ts只能理解.ts为后缀的文件，无法理解.vue文件 解决方法:</p>
-<ul>
-<li>Google 搜索 Vue 3 can not find module</li>
-<li>创建 xxx.d.ts，告诉 TS 如何理解 .vue 文件</li>
-<li>src/shims-vue.d.ts</li>
-</ul>
-<blockquote>
-</blockquote>
-<pre><code>declare module &#39;*.vue&#39; &#123;
- import &#123; Component &#125; from &#39;vue&#39;
- const component: Component
- export default component
-&#125;   
-</code></pre>
-<blockquote>
-</blockquote>
-<p>这里要注意如果我们用的是vscode这时报错已经没了，但是如果我们用的是webstrom编辑器它还是会 报同样的错误，我们需要再额外的安装ts，然后初始化ts配置</p>
-<blockquote>
-</blockquote>
-<pre><code>yarn add typescript -D
-tsc --init
-</code></pre>
-<blockquote>
-</blockquote>
-<p>这样报错就会解决了</p>
-<h4 id="4-使用router"><a href="#4-使用router" class="headerlink" title="(4)使用router"></a>(4)使用router</h4><blockquote>
-</blockquote>
-<pre><code>const app = createApp(App)
-app.use(router)
-app.mount(&#39;#app&#39;)
-</code></pre>
-<blockquote>
-</blockquote>
-<h4 id="5-添加-router-view"><a href="#5-添加-router-view" class="headerlink" title="(5)添加 router-view"></a>(5)添加 router-view</h4><ul>
-<li>App.vue</li>
-</ul>
-<blockquote>
-</blockquote>
-<pre><code>&lt;template&gt;
-  &lt;div&gt;hi&lt;/div&gt;
-  &lt;router-view/&gt;
-&lt;/template&gt;
+<h3 id="6-解决-ios-audio-无法自动播放、循环播放的问题"><a href="#6-解决-ios-audio-无法自动播放、循环播放的问题" class="headerlink" title="6.解决 ios audio 无法自动播放、循环播放的问题"></a>6.解决 ios audio 无法自动播放、循环播放的问题</h3><p>ios 手机在使用 audio 或者 video 播放的时候，个别机型无法实现自动播放，可使用下面的代码 hack。</p>
+<pre><code class="js">// 解决ios audio无法自动播放、循环播放的问题
+var music = document.getElementById(&#39;video&#39;);
+var state = 0;
 
-&lt;script&gt;
- export default&#123;
- name: &#39;App&#39;
-&#125;
-&lt;/script&gt;
-</code></pre>
-<blockquote>
-</blockquote>
-<h4 id="6-添加router-link"><a href="#6-添加router-link" class="headerlink" title="(6)添加router-link"></a>(6)添加router-link</h4><blockquote>
-</blockquote>
-<pre><code>&lt;div&gt;导航栏 |
- &lt;router-link to=&quot;/&quot;&gt;lifa&lt;/router-link&gt;
- &lt;router-link to=&quot;xxx&quot;&gt;lifa2&lt;/router-link&gt;
-&lt;/div&gt;
-</code></pre>
-<blockquote>
-</blockquote>
-<h2 id="3-安装sass"><a href="#3-安装sass" class="headerlink" title="3.安装sass"></a>3.安装sass</h2><blockquote>
-</blockquote>
-<pre><code>yarn add sass
-</code></pre>
-<blockquote>
-</blockquote>
-<p>发现控制台报错 <img src="/2021/051326278/2.jpg"></p>
-<p>解决方法：</p>
-<h3 id="4-1-打开package-json"><a href="#4-1-打开package-json" class="headerlink" title="4.1 打开package.json"></a>4.1 打开package.json</h3><h3 id="4-2-把dependencies里的sass这一行，移到devDependencies"><a href="#4-2-把dependencies里的sass这一行，移到devDependencies" class="headerlink" title="4.2. 把dependencies里的sass这一行，移到devDependencies"></a>4.2. 把dependencies里的sass这一行，移到devDependencies</h3><p><img src="/2021/051326278/3.jpg"></p>
-<h3 id="4-3-重新运行yarn-install"><a href="#4-3-重新运行yarn-install" class="headerlink" title="4.3. 重新运行yarn install"></a>4.3. 重新运行yarn install</h3><h2 id="5-使用provide和inject实现父子组件通信"><a href="#5-使用provide和inject实现父子组件通信" class="headerlink" title="5. 使用provide和inject实现父子组件通信"></a>5. 使用provide和inject实现父子组件通信</h2><h3 id="5-1-在父组件里使用provide提供一个变量值，provide第一个参数是变量名，第二个是对应的值"><a href="#5-1-在父组件里使用provide提供一个变量值，provide第一个参数是变量名，第二个是对应的值" class="headerlink" title="5.1. 在父组件里使用provide提供一个变量值，provide第一个参数是变量名，第二个是对应的值"></a>5.1. 在父组件里使用provide提供一个变量值，provide第一个参数是变量名，第二个是对应的值</h3><ul>
-<li>App.vue</li>
-</ul>
-<blockquote>
-</blockquote>
-<pre><code>&lt;script lang=&quot;ts&quot;&gt;
- import &#123; ref, provide &#125; from &#39;vue&#39;
- export default &#123;
-  name: &#39;App&#39;,
-  setup() &#123;
-   const menuVisible = ref(false)
-    provide(&#39;xxx&#39;, menuVisible)
-  &#125;
+document.addEventListener(&#39;touchstart&#39;, function()&#123;
+    if(state==0)&#123;
+        music.play();
+        state=1;
+    &#125;
+&#125;, false);
+
+document.addEventListener(&quot;WeixinJSBridgeReady&quot;, function () &#123;
+    music.play();
+&#125;, false);
+
+//循环播放
+music.onended = function () &#123;
+    music.load();
+    music.play();
 &#125;
 </code></pre>
-<blockquote>
-</blockquote>
-<h3 id="5-2-在子组件里通过inject使用这个变量，括号里的就是你设置的provide的key值"><a href="#5-2-在子组件里通过inject使用这个变量，括号里的就是你设置的provide的key值" class="headerlink" title="5.2. 在子组件里通过inject使用这个变量，括号里的就是你设置的provide的key值"></a>5.2. 在子组件里通过inject使用这个变量，括号里的就是你设置的provide的key值</h3><ul>
-<li>topnav.vue</li>
-</ul>
-<blockquote>
-</blockquote>
-<pre><code> import &#123; inject, Ref &#125; from &#39;vue&#39;
- export default &#123;
-  name: &#39;TopNav&#39;,
-  setup() &#123;
-  const menuVisible = inject&lt;Ref&lt;boolean&gt;&gt;(&#39;xxx&#39;)
-  console.log(menuVisible.value, &#39;topNav menuvisible&#39;)
-  &#125;
+<h3 id="7-水平垂直居中"><a href="#7-水平垂直居中" class="headerlink" title="7.水平垂直居中"></a>7.水平垂直居中</h3><p>我一般只使用两种方式 定位 或者 flex，我觉得够用了。</p>
+<pre><code class="css">div &#123;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
 &#125;
 </code></pre>
-<blockquote>
-</blockquote>
-<h2 id="6-路由间切换"><a href="#6-路由间切换" class="headerlink" title="6.路由间切换"></a>6.路由间切换</h2><ul>
-<li>Doc.vue</li>
-</ul>
-<blockquote>
-</blockquote>
-<pre><code>&lt;li&gt;
-    &lt;router-link to=&quot;/doc/switch&quot;&gt;Switch 组件&lt;/router-link&gt;
-&lt;/li&gt;
-&lt;main&gt;
-    &lt;router-view&gt;&lt;/router-view&gt;
-&lt;/main&gt;
+<p>父级控制子集居中</p>
+<pre><code class="css">.parent &#123;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+&#125;
 </code></pre>
-<blockquote>
-</blockquote>
-<ul>
-<li>mian.ts</li>
+<h3 id="8-隐藏页面元素"><a href="#8-隐藏页面元素" class="headerlink" title="8.隐藏页面元素"></a>8.隐藏页面元素</h3><ul>
+<li>display-none: 元素不存在，从 dom 中删除</li>
+<li>opacity-0: 元素透明度将为 0，但元素仍然存在，绑定的事件仍旧有效仍可触发执行。</li>
+<li>visibility-hidden：元素隐藏，但元素仍旧存在，页面中无法触发该元素的事件。</li>
 </ul>
-<blockquote>
-</blockquote>
-<pre><code>const router = createRouter(&#123;
- history,
- routes: [
-    &#123; path: &#39;/&#39;, component: Home &#125;,
-    &#123; path: &#39;/doc&#39;, component: Doc, children: [
-      &#123; path: &#39;switch&#39;, component: SwitchDemo &#125;
-    ]
-  &#125;
- ]
-&#125;)
-router.afterEach(() =&gt; &#123;
- console.log(&#39;路由切换了&#39;)
-&#125;)
+<h3 id="9-前端工程化"><a href="#9-前端工程化" class="headerlink" title="9.前端工程化"></a>9.前端工程化</h3><p>一提到前端工程化很多人想到的都是 webpack，这是不对的，webpack 仅仅是前端工程化中的一环。在整个工程化过程中他帮我们解决了绝大多数的问题，但并没有解决所有问题。 前端工程化是通过工具提升效率，降低成本的一种手段。 近些年被广泛的关注和探讨，究其原因主要是因为现代化前端应用功能要求不断提高，业务逻辑日益复杂，作为当下互联网时代唯一不可或缺的技术，前端可以说是占据了整个开发行业的半壁江山。从传统的网站，到现在的 H5,移动 App,桌面应用，以及小程序。前端技术几乎是无所不能的全面覆盖。 在这些表象的背后呢，实际上是行业对开发人员的要求发生了天翻地覆的变化，以往前端写 demo，套模板，调页面这种刀耕火种的方式已经完全不符合当下对开发效率的要求，前端工程化就是在这样一个背景下被提上台面，成为前端工程师必备的手段之一。 一般来说前端工程包含，项目初始化，项目开发，集成，构建，打包，测试，部署等流程。工程化就是以工程的角度来解决这些问题。比如项目初始化我们一般使用 npm init, 创建页面模板使用 plop，我们喜欢使用 ES6+开发，但是需要通过 babel 编码成 ES5，持续集成的时候我们使用 git，但是为了保持开发规范我们引入了 ESLint，部署一般使用 ci/cd 或者 jenkins 等等。 前端工程化是一个比较大的话题，后面我们会单开话题来讲。</p>
+<h3 id="10-contenteditable"><a href="#10-contenteditable" class="headerlink" title="10.contenteditable"></a>10.contenteditable</h3><p>html 中大部分标签都是不可以编辑的，但是添加了 contenteditable 属性之后，标签会变成可编辑状态。</p>
+<pre><code class="html">&lt;div contenteditable=&quot;true&quot;&gt;&lt;/div&gt;
 </code></pre>
-<blockquote>
-</blockquote>
-<p>实现点击菜单跳转关闭左侧菜单栏 我们需要在路由离开的时候将menuVisible的值设为false，但是我们在main.ts里拿不到 menuVisible这个变量，那如果我们把router.afterEach放在App里就可以访问这个变量了，但是 这样的话App里又访问不到我们的router了，所以我们需要单独构建一个router.ts文件</p>
-<ul>
-<li>router.ts</li>
-</ul>
-<blockquote>
-</blockquote>
-<pre><code>import &#123;createWebHashHistory, createRouter&#125; from &#39;vue-router&#39;
-import Home from &#39;./views/Home.vue&#39;
-import Doc from &#39;./views/Doc.vue&#39;
-import SwitchDemo from &#39;./views/SwitchDemo.vue&#39;
-  const history = createWebHashHistory()
-  export const router = createRouter(&#123;
-    history,
-    routes: [
-        &#123; path: &#39;/&#39;, component: Home &#125;,
-        &#123; path: &#39;/doc&#39;, component: Doc, children: [
-        &#123; path: &#39;switch&#39;, component: SwitchDemo &#125;
-    ]
-  &#125;
- ]
+<p>不过通过这个属性把标签变为可编辑状态后只有 input 事件，没有 change 事件。也不能像表单一样通过 maxlength 控制最大长度。我也忘记我在什么情况下用到过了，后面想起来再补吧。</p>
+<h3 id="11-calc"><a href="#11-calc" class="headerlink" title="11.calc"></a>11.calc</h3><p>这是一个 css 属性，我一般称之为 css 表达式。可以计算 css 的值。最有趣的是他可以计算不同单位的差值。很好用的一个功能，缺点是不容易阅读。接盘侠没办法一眼看出 20px 是啥。</p>
+<pre><code class="css">div &#123;
+    width: calc(25% - 20px);
+&#125;
+</code></pre>
+<h3 id="12-Proxy-和-Object-defineProperty-区别"><a href="#12-Proxy-和-Object-defineProperty-区别" class="headerlink" title="12.Proxy 和 Object.defineProperty 区别"></a>12.Proxy 和 Object.defineProperty 区别</h3><p>Proxy 的意思是代理，我一般教他拦截器，可以拦截对象上的一个操作。用法如下，通过 new 的方式创建对象，第一个参数是被拦截的对象，第二个参数是对象操作的描述。实例化后返回一个新的对象，当我们对这个新的对象进行操作时就会调用我们描述中对应的方法。</p>
+<pre><code class="js">new Proxy(target, &#123;
+    get(target, property) &#123;
+
+    &#125;,
+    set(target, property) &#123;
+
+    &#125;,
+    deleteProperty(target, property) &#123;
+
+    &#125;
 &#125;)
 </code></pre>
-<blockquote>
-</blockquote>
-<ul>
-<li>App.vue</li>
-</ul>
-<blockquote>
-</blockquote>
-<pre><code> import &#123; router &#125; from &quot;./router&quot;;
- setup() &#123;
-    const width = document.documentElement.clientWidth
-    const menuVisible = ref(width &gt; 500 ? true : false)
-    provide(&#39;xxx&#39;, menuVisible)
-  +   router.afterEach(() =&gt; &#123;
-  +      menuVisible.value = false
-  +    &#125;)
-   &#125;
+<p>Proxy 区别于 Object.definedProperty。 Object.defineProperty 只能监听到属性的读写，而 Proxy 除读写外还可以监听属性的删除，方法的调用等。 通常情况下我们想要监视数组的变化，基本要依靠重写数组方法的方式实现，这也是 Vue 的实现方式，而 Proxy 可以直接监视数组的变化。</p>
+<pre><code class="js">const list = [1, 2, 3];
+const listproxy = new Proxy(list, &#123;
+    set(target, property, value) &#123;
+        target[property] = value;
+        return true; // 标识设置成功
+    &#125;
+&#125;);
+
+list.push(4);
 </code></pre>
-<blockquote>
-</blockquote>
-<ul>
-<li>main.ts</li>
-</ul>
-<blockquote>
-</blockquote>
-<pre><code>import &#123;router&#125; from &#39;./router&#39;
-const app = createApp(App)
-app.use(router)
+<p>Proxy 是以非入侵的方式监管了对象的读写，而 defineProperty 需要按特定的方式定义对象的属性。</p>
+<h3 id="13-Reflect"><a href="#13-Reflect" class="headerlink" title="13.Reflect"></a>13.Reflect</h3><p>他是 ES2015 新增的对象，纯静态对象也就是不能被实例画，只能通过静态方法的方式调用，和 Math 对象类似，只能类似 Math.random 的方式调用。 Reflect 内部封装了一系列对对象的底层操作，一共 14 个，其中 1 个被废弃，还剩下 13 个。 Reflect 的静态方法和 Proxy 描述中的方法完全一致。也就是说 Reflect 成员方法就是 Proxy 处理对象的默认实现。 Proxy 对象默认的方法就是调用了 Reflect 内部的处理逻辑，也就是如果我们调用 get 方法，那么在内部，proxy 就是将 get 原封不动的交给了 Reflect，如下。</p>
+<pre><code class="js">const proxy = new Proxy(obj, &#123;
+    get(target, property) &#123;
+        return Reflect.get(target, property);
+    &#125;
+&#125;)
+</code></pre>
+<p>Reflect 和 Proxy 没有绝对的关系，我们一般将他们两个放在一起讲是为了方便对二者的理解。 那为什么会有 Reflect 对象呢，其实他最大的用处就是提供了一套统一操作 Object 的 API。判断对象是否存在某一个属性，可以使用 in 操作符，但是不够优雅，还可以使用 Reflect.has(obj, name); 删除一个属性可以使用 delete，也可以使用 Reflect.deleteProperty(obj, name); 获取所有属性名可以使用 Object.keys, 也可以使用 Reflect.ownKeys(obj); 我们更推荐使用 Reflect 的 API 来操作对象，因为他才是未来。</p>
+<h3 id="14-解析-get-参数"><a href="#14-解析-get-参数" class="headerlink" title="14.解析 get 参数"></a>14.解析 get 参数</h3><p>通过 replace 方法获取 url 中的参数键值对，可以快速解析 get 参数。</p>
+<pre><code class="js">const q = &#123;&#125;;
+location.search.replace(/([^?&amp;=]+)=([^&amp;]+)/g,(_,k,v)=&gt;q[k]=v);
+console.log(q);
+</code></pre>
+<h3 id="15-解析连接-url"><a href="#15-解析连接-url" class="headerlink" title="15.解析连接 url"></a>15.解析连接 url</h3><p>可以通过创建 a 标签，给 a 标签赋值 href 属性的方式，获取到协议，pathname，origin 等 location 对象上的属性。</p>
+<pre><code class="js">// 创建a标签
+const aEle = document.createElement(&#39;a&#39;);
+// 给a标签赋值href路径
+aEle.href = &#39;/test.html&#39;;
+// 访问aEle中的属性
+aEle.protocol; // 获取协议
+aEle.pathname; // 获取path
+aEle.origin;
+aEle.host;
+aEle.search;
 </code></pre>
 
                 
@@ -724,7 +647,7 @@ app.use(router)
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://nhnjs.github.io/2021/051326278.html">http://nhnjs.github.io/2021/051326278.html</a>
+                    <a href="http://nhnjs.github.io/2021/060219214.html">http://nhnjs.github.io/2021/060219214.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -762,8 +685,8 @@ app.use(router)
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/vue3/">
-                                    <span class="chip bg-color">vue3</span>
+                                <a href="/tags/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/">
+                                    <span class="chip bg-color">前端优化</span>
                                 </a>
                             
                         </div>
@@ -1261,9 +1184,10 @@ app.use(router)
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/060219214.html">
                     <div class="card-image">
@@ -1281,9 +1205,9 @@ app.use(router)
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1296,6 +1220,7 @@ app.use(router)
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1314,13 +1239,13 @@ app.use(router)
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05124429.html">
+                <a href="/2021/051326278.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="vue3 新特性">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="vue3+vite创建项目">
                         
-                        <span class="card-title">vue3 新特性</span>
+                        <span class="card-title">vue3+vite创建项目</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1331,7 +1256,7 @@ app.use(router)
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-13
                             </span>
                         <span class="publish-author">
                             
