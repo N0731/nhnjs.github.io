@@ -468,34 +468,34 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="第一节-浏览器工作原理和-V8-引擎"><a href="#第一节-浏览器工作原理和-V8-引擎" class="headerlink" title="第一节 浏览器工作原理和 V8 引擎"></a>第一节 浏览器工作原理和 V8 引擎</h2><h3 id="1-浏览器的工作原理"><a href="#1-浏览器的工作原理" class="headerlink" title="1. 浏览器的工作原理"></a>1. 浏览器的工作原理</h3><p><img src="/2022/021964822/image-20220105184125114.png" alt="image-20220105184125114"></p>
+                <h2 id="第一节-浏览器工作原理和-V8-引擎"><a href="#第一节-浏览器工作原理和-V8-引擎" class="headerlink" title="第一节 浏览器工作原理和 V8 引擎"></a>第一节 浏览器工作原理和 V8 引擎</h2><h3 id="1-浏览器的工作原理"><a href="#1-浏览器的工作原理" class="headerlink" title="1. 浏览器的工作原理"></a>1. 浏览器的工作原理</h3><p><img src="/2022/021964822/image-20220105184125114.png"></p>
 <p><strong>服务器返回给我们一个网页 当浏览器解析到 link 标签下载 css 文件解析到 script 标签就下载 js 文件</strong></p>
-<h3 id="2-浏览器的渲染过程"><a href="#2-浏览器的渲染过程" class="headerlink" title="2. 浏览器的渲染过程"></a>2. 浏览器的渲染过程</h3><p><img src="/2022/021964822/image-20220107083615216.png" alt="image-20220107083615216"></p>
+<h3 id="2-浏览器的渲染过程"><a href="#2-浏览器的渲染过程" class="headerlink" title="2. 浏览器的渲染过程"></a>2. 浏览器的渲染过程</h3><p><img src="/2022/021964822/image-20220107083615216.png"></p>
 <h3 id="3-JavaScript-引擎"><a href="#3-JavaScript-引擎" class="headerlink" title="3. JavaScript 引擎"></a>3. JavaScript 引擎</h3><p>JavaScript 引擎就是把 js 代码转换为机器代码，由 cpu 执行。</p>
 <h3 id="4-v8-引擎"><a href="#4-v8-引擎" class="headerlink" title="4. v8 引擎"></a>4. v8 引擎</h3><p><strong>js 代码的执行过程</strong></p>
-<p><img src="/2022/021964822/image-20220107084700472.png" alt="image-20220107084700472"></p>
+<p><img src="/2022/021964822/image-20220107084700472.png"></p>
 <p><strong>JS 代码被解析成—》 抽象语法树 —–》然后又被转化为字节码 ——》 执行</strong></p>
-<p><img src="/2022/021964822/image-20220107103233302.png" alt="image-20220107103233302"></p>
+<p><img src="/2022/021964822/image-20220107103233302.png"></p>
 <h3 id="5-全局代码在内存中执行"><a href="#5-全局代码在内存中执行" class="headerlink" title="5. 全局代码在内存中执行"></a>5. 全局代码在内存中执行</h3><ol>
 <li><p>js 引擎会在执行代码之前，会在堆内存中创建一个全局对象：Global Object（GO）<br>该对象所有的作用域（scope）都可以访问；<br>里面会包含 Date、Array、String、Number、setTimeout、setInterval 等等；<br>其中还有一个 window 属性指向自己；<br>初始化全局对象</p>
-<p><img src="/2022/021964822/image-20220107113037238.png" alt="image-20220107113037238"></p>
+<p><img src="/2022/021964822/image-20220107113037238.png"></p>
 </li>
 <li><p>js 引擎内部有一个执行上下文栈（Execution Context Stack，简称 ECS），它是用于执行代码的调用栈。</p>
-<p><img src="/2022/021964822/image-20220107145209389.png" alt="image-20220107145209389"></p>
+<p><img src="/2022/021964822/image-20220107145209389.png"></p>
 </li>
 <li><p>执行全局代码时，会构建一个 GEC 放入调用栈中执行</p>
 <p>GEC 被放入到 ECS 中里面包含两部分内容：<br>第一部分：在代码执行前，在 parser 转成 AST 的过程中，会将全局定义的变量、函数等加入到 GlobalObject 中，<br>但是并不会赋值；<br>ü 这个过程也称之为变量的作用域提升（hoisting）<br>p 第二部分：在代码执行中，对变量赋值，或者执行其他的函数；</p>
-<p><img src="/2022/021964822/image-20220107142254901.png" alt="image-20220107142254901"></p>
+<p><img src="/2022/021964822/image-20220107142254901.png"></p>
 </li>
 </ol>
 <h2 id="第二节-内存管理和内存泄漏"><a href="#第二节-内存管理和内存泄漏" class="headerlink" title="第二节 内存管理和内存泄漏"></a>第二节 内存管理和内存泄漏</h2><p>当我们查找一个变量是，真实的查找路径是沿着作用域链查找。</p>
 <h3 id="1-全局作用域下遇到函数的执行顺序"><a href="#1-全局作用域下遇到函数的执行顺序" class="headerlink" title="1. 全局作用域下遇到函数的执行顺序"></a>1. 全局作用域下遇到函数的执行顺序</h3><ol>
 <li><p>创建 GO 对象 由于是在编译过程 属性值是 undefined 但是函数的属性值是地址</p>
 <p>由于是函数另外单独开辟一块空间存储 作用域在我们编译的时候就已经确认</p>
-<p><img src="/2022/021964822/image-20220107151802976.png" alt="image-20220107151802976"></p>
+<p><img src="/2022/021964822/image-20220107151802976.png"></p>
 </li>
 <li><p>想要执行代码就要放入 ECStack 调用栈</p>
-<p><img src="/2022/021964822/image-20220107152059292.png" alt="image-20220107152059292"></p>
+<p><img src="/2022/021964822/image-20220107152059292.png"></p>
 </li>
 <li><p>创建 GEC 全局执行上下文添加到调用栈</p>
 <p>GEC 中包含了 ：</p>
@@ -503,13 +503,13 @@
 <li>VO ：就是 GO</li>
 <li>执行代码</li>
 </ul>
-<p><img src="/2022/021964822/image-20220107152227611.png" alt="image-20220107152227611"></p>
+<p><img src="/2022/021964822/image-20220107152227611.png"></p>
 </li>
 <li><p>开始执行代码 当执行到函数时 创建 AO 对象</p>
-<p><img src="/2022/021964822/image-20220107152522891.png" alt="image-20220107152522891"></p>
+<p><img src="/2022/021964822/image-20220107152522891.png"></p>
 </li>
 <li><p>创建一个 FEC 函数执行上下文 添加到调用栈中</p>
-<p><img src="/2022/021964822/image-20220107152604616.png" alt="image-20220107152604616"></p>
+<p><img src="/2022/021964822/image-20220107152604616.png"></p>
 </li>
 <li><p>FEC 中 VO 指向 AO</p>
 <p>scope chain （作用域链）: AO+parent Scope</p>
@@ -531,24 +531,24 @@ function foo(num) &#123;
 </code></pre>
 <ol>
 <li><p>创建 GO globalobject 对象 还未执行代码所以 name 值为 undefined foo 是一个函数 所以另外开一个空间储存 函数体以及作用域</p>
-<p><img src="/2022/021964822/image-20220107153607587.png" alt="image-20220107153607587"></p>
+<p><img src="/2022/021964822/image-20220107153607587.png"></p>
 <p><strong>在函数编译时候作用域就已经确定了</strong></p>
-<p><img src="/2022/021964822/image-20220107153705578.png" alt="image-20220107153705578"></p>
+<p><img src="/2022/021964822/image-20220107153705578.png"></p>
 </li>
 <li><p>在调用栈中 创建全局执行上下文</p>
-<p><img src="/2022/021964822/image-20220107153854595.png" alt="image-20220107153854595"></p>
+<p><img src="/2022/021964822/image-20220107153854595.png"></p>
 </li>
 <li><p>执行到 foo（）时 创建 AO 对象</p>
-<p><img src="/2022/021964822/image-20220107153949057.png" alt="image-20220107153949057"></p>
+<p><img src="/2022/021964822/image-20220107153949057.png"></p>
 </li>
 <li><p>创建 FEC 函数执行上下文 VO 指向 AO 原型链 ：AO +父级作用域</p>
-<p><img src="/2022/021964822/image-20220107154048087.png" alt="image-20220107154048087"></p>
+<p><img src="/2022/021964822/image-20220107154048087.png"></p>
 </li>
 <li><p>开始执行代码 执行到 bar（）时 创建一个 AO 为空</p>
-<p><img src="/2022/021964822/image-20220107154241154.png" alt="image-20220107154241154"></p>
+<p><img src="/2022/021964822/image-20220107154241154.png"></p>
 </li>
 <li><p>在调用栈中在创建一个 FEC 函数执行上下文</p>
-<p><img src="/2022/021964822/image-20220107154313948.png" alt="image-20220107154313948"></p>
+<p><img src="/2022/021964822/image-20220107154313948.png"></p>
 </li>
 <li><p>执行代码输出 name 由于 bar 函数中没有 name 变量定义 我们根据作用域链查找 上一级 foo 函数中也没有 name 变量在根据作用域链查找上一级 GO 中有 name 值 所以输出打印 why</p>
 </li>
@@ -556,13 +556,13 @@ function foo(num) &#123;
 <p><strong>这就是作用域链的原理</strong></p>
 <h3 id="3-变量环境和记录"><a href="#3-变量环境和记录" class="headerlink" title="3. 变量环境和记录"></a>3. 变量环境和记录</h3><p>新的 es 规范中 vo 概念被更换为 ve 环境变量</p>
 <h3 id="4-内存管理"><a href="#4-内存管理" class="headerlink" title="4. 内存管理"></a>4. 内存管理</h3><p>代码执行过程中都需要给它分配内存</p>
-<p><img src="/2022/021964822/image-20220107163453421.png" alt="image-20220107163453421"></p>
+<p><img src="/2022/021964822/image-20220107163453421.png"></p>
 <p><strong>JS 中在我们定义变量时就分配内存了</strong></p>
 <ul>
 <li>JS 对于基本数据类型内存分配会在执行时，直接在栈空间进行分配</li>
 <li>JS 对于复杂数据类型内存分配会在堆内存中开辟一块空间，并且将这块空间的指针返回值变量引用</li>
 </ul>
-<p><img src="/2022/021964822/image-20220107164118116.png" alt="image-20220107164118116"></p>
+<p><img src="/2022/021964822/image-20220107164118116.png"></p>
 <h3 id="5-JS-的垃圾回收"><a href="#5-JS-的垃圾回收" class="headerlink" title="5. JS 的垃圾回收"></a>5. JS 的垃圾回收</h3><p>垃圾回收也叫 GC，JS 自带垃圾回收。</p>
 <h2 id="第三节-深入-JS-闭包"><a href="#第三节-深入-JS-闭包" class="headerlink" title="第三节 深入 JS 闭包"></a>第三节 深入 JS 闭包</h2><h3 id="1-高阶函数"><a href="#1-高阶函数" class="headerlink" title="1. 高阶函数"></a>1. 高阶函数</h3><p><strong>把一个函数接收另外一个函数作为参数或者把另外一个函数作为返回值 就被称为高阶函数。</strong></p>
 <h3 id="2-数组中的常见高阶函数"><a href="#2-数组中的常见高阶函数" class="headerlink" title="2. 数组中的常见高阶函数"></a>2. 数组中的常见高阶函数</h3><ul>
@@ -838,9 +838,9 @@ Function.prototype.hybind = function (thisArg, ...argArray) &#123;
 </ul>
 <p><strong>副作用：在执行函数时，除了返回函数值之外，还对调用函数产生了附加影响，比如修改了全局变量，修改参数或者改变外部的存储</strong></p>
 <h3 id="3-函数柯里化"><a href="#3-函数柯里化" class="headerlink" title="3. 函数柯里化"></a>3. 函数柯里化</h3><p>概念：值传递给函数一部分参数来调用它，让他返回一个函数去处理剩余参数 这个过程就叫做柯里化</p>
-<p><img src="/2022/021964822/image-20220110221137680.png" alt="image-20220110221137680"></p>
-<h3 id="4-柯里化的实现"><a href="#4-柯里化的实现" class="headerlink" title="4. 柯里化的实现"></a>4. 柯里化的实现</h3><p><img src="/2022/021964822/image-20220111124307191.png" alt="image-20220111124307191"></p>
-<h3 id="5-理解组合函数"><a href="#5-理解组合函数" class="headerlink" title="5. 理解组合函数"></a>5. 理解组合函数</h3><p><img src="/2022/021964822/image-20220111124728862.png" alt="image-20220111124728862"></p>
+<p><img src="/2022/021964822/image-20220110221137680.png"></p>
+<h3 id="4-柯里化的实现"><a href="#4-柯里化的实现" class="headerlink" title="4. 柯里化的实现"></a>4. 柯里化的实现</h3><p><img src="/2022/021964822/image-20220111124307191.png"></p>
+<h3 id="5-理解组合函数"><a href="#5-理解组合函数" class="headerlink" title="5. 理解组合函数"></a>5. 理解组合函数</h3><p><img src="/2022/021964822/image-20220111124728862.png"></p>
 <h2 id="第八节-面向对象"><a href="#第八节-面向对象" class="headerlink" title="第八节 面向对象"></a>第八节 面向对象</h2><h3 id="1-with-语句"><a href="#1-with-语句" class="headerlink" title="1. with 语句"></a>1. with 语句</h3><p>with 语句：可以形成自己的作用域</p>
 <p>with（参数是一个对象）{ }</p>
 <p>查找变量先去对象中查找再去上层作用域中查找</p>
@@ -849,7 +849,7 @@ Function.prototype.hybind = function (thisArg, ...argArray) &#123;
 <p><strong>不推荐使用 可读性差 不能被 js 引擎优化</strong></p>
 <h3 id="3-认识严格模式"><a href="#3-认识严格模式" class="headerlink" title="3. 认识严格模式"></a>3. 认识严格模式</h3><p>具有限制性的 js 模式，从而使代码隐式的脱离了 懒散模式</p>
 <p>“use strict”;</p>
-<p><img src="/2022/021964822/image-20220111135259635.png" alt="image-20220111135259635"></p>
+<p><img src="/2022/021964822/image-20220111135259635.png"></p>
 <h3 id="4-面向对象"><a href="#4-面向对象" class="headerlink" title="4. 面向对象"></a>4. 面向对象</h3><h4 id="4-1-创建对象的方式一"><a href="#4-1-创建对象的方式一" class="headerlink" title="4-1 创建对象的方式一"></a>4-1 创建对象的方式一</h4><p>var obj=new Object（）</p>
 <p>obj.name=’123’</p>
 <h4 id="4-2-创建对象方式二"><a href="#4-2-创建对象方式二" class="headerlink" title="4-2 创建对象方式二"></a>4-2 创建对象方式二</h4><p>var obj={</p>
@@ -859,9 +859,9 @@ Function.prototype.hybind = function (thisArg, ...argArray) &#123;
 <pre><code class="js">//定义单个属性符
 Object.definedProperty（）
 </code></pre>
-<p><img src="/2022/021964822/image-20220111144926574.png" alt="image-20220111144926574"></p>
-<h3 id="6-Object-defineProperty（obj，name，-）的数据属性描述符"><a href="#6-Object-defineProperty（obj，name，-）的数据属性描述符" class="headerlink" title="6. Object.defineProperty（obj，name，{}）的数据属性描述符"></a>6. Object.defineProperty（obj，name，{}）的数据属性描述符</h3><p><img src="/2022/021964822/image-20220111145110625.png" alt="image-20220111145110625"></p>
-<h3 id="7-Object-defineProperty（obj，name，-）-存取属性描述符"><a href="#7-Object-defineProperty（obj，name，-）-存取属性描述符" class="headerlink" title="7.Object.defineProperty（obj，name，{}） 存取属性描述符"></a>7.Object.defineProperty（obj，name，{}） 存取属性描述符</h3><p><img src="/2022/021964822/image-20220111150939972.png" alt="image-20220111150939972"></p>
+<p><img src="/2022/021964822/image-20220111144926574.png"></p>
+<h3 id="6-Object-defineProperty（obj，name，-）的数据属性描述符"><a href="#6-Object-defineProperty（obj，name，-）的数据属性描述符" class="headerlink" title="6. Object.defineProperty（obj，name，{}）的数据属性描述符"></a>6. Object.defineProperty（obj，name，{}）的数据属性描述符</h3><p><img src="/2022/021964822/image-20220111145110625.png"></p>
+<h3 id="7-Object-defineProperty（obj，name，-）-存取属性描述符"><a href="#7-Object-defineProperty（obj，name，-）-存取属性描述符" class="headerlink" title="7.Object.defineProperty（obj，name，{}） 存取属性描述符"></a>7.Object.defineProperty（obj，name，{}） 存取属性描述符</h3><p><img src="/2022/021964822/image-20220111150939972.png"></p>
 <p>存取属性描述符的应用场景：</p>
 <ol>
 <li><strong>当我们需要私有属性不希望被外界使用赋值</strong></li>
@@ -910,7 +910,7 @@ Object.definedProperty（）
 <h3 id="4-创建对象方案"><a href="#4-创建对象方案" class="headerlink" title="4. 创建对象方案"></a>4. 创建对象方案</h3><ol>
 <li><p>工厂模式创建对象</p>
 <p>利用函数批量创建对象</p>
-<p><img src="/2022/021964822/image-20220111173836223.png" alt="image-20220111173836223"></p>
+<p><img src="/2022/021964822/image-20220111173836223.png"></p>
 </li>
 <li><p>利用构造函数创建对象</p>
 <p>一个函数通过 new 关键字调用，那么这个函数就是构造函数了</p>
@@ -1084,7 +1084,7 @@ inheritPrototype(Student,Person);
 <p><strong>从对象的角度看</strong>：</p>
 <p>但是因为 Object 其实也是一个函数 所以 Object 的 ** proto ** 又指向了 Function 的 prototype</p>
 <p>Object.** proto ** ===Function.prototype</p>
-<p><img src="/2022/021964822/image-20220115113159991.png" alt="image-20220115113159991"></p>
+<p><img src="/2022/021964822/image-20220115113159991.png"></p>
 <h2 id="第十一节-Es6-中的-class"><a href="#第十一节-Es6-中的-class" class="headerlink" title="第十一节 Es6 中的 class"></a>第十一节 Es6 中的 class</h2><h4 id="1-class-定义类的方式"><a href="#1-class-定义类的方式" class="headerlink" title="1. class 定义类的方式"></a>1. class 定义类的方式</h4><pre><code class="js">//类的声明  普遍用法
 class Person&#123;
 
@@ -1393,7 +1393,7 @@ set.add(30);
 set.add(40);
 console.log(set);
 </code></pre>
-<h4 id="1-3-添加对象是特别注意"><a href="#1-3-添加对象是特别注意" class="headerlink" title="1-3 添加对象是特别注意"></a>1-3 添加对象是特别注意</h4><p><img src="/2022/021964822/image-20220117174405341.png" alt="image-20220117174405341"></p>
+<h4 id="1-3-添加对象是特别注意"><a href="#1-3-添加对象是特别注意" class="headerlink" title="1-3 添加对象是特别注意"></a>1-3 添加对象是特别注意</h4><p><img src="/2022/021964822/image-20220117174405341.png"></p>
 <ul>
 <li>第一个添加会输出打印两个 {} 因为创建了两个不同的对象在内存中</li>
 <li>第二个只会输出一个{} 因为添加的是同一个对象</li>
@@ -1434,7 +1434,7 @@ const newArr=Array.from(arrSet) 或者 newArr=[...arrSet]
 <li>delete（value）：从 WeakSet 中删除和这个值相等的元素，返回布尔值</li>
 <li>has（value）：判断 WeakSet 中是否存在某个元素，返回布尔值</li>
 </ul>
-<h4 id="注意：-WeakSet-不能遍历！！！"><a href="#注意：-WeakSet-不能遍历！！！" class="headerlink" title="注意： WeakSet 不能遍历！！！"></a>注意： WeakSet 不能遍历！！！</h4><h4 id="2-3-WeakSet-应用场景"><a href="#2-3-WeakSet-应用场景" class="headerlink" title="2-3 WeakSet 应用场景"></a>2-3 WeakSet 应用场景</h4><p><img src="/2022/021964822/image-20220117181856580.png" alt="image-20220117181856580"></p>
+<h4 id="注意：-WeakSet-不能遍历！！！"><a href="#注意：-WeakSet-不能遍历！！！" class="headerlink" title="注意： WeakSet 不能遍历！！！"></a>注意： WeakSet 不能遍历！！！</h4><h4 id="2-3-WeakSet-应用场景"><a href="#2-3-WeakSet-应用场景" class="headerlink" title="2-3 WeakSet 应用场景"></a>2-3 WeakSet 应用场景</h4><p><img src="/2022/021964822/image-20220117181856580.png"></p>
 <h3 id="3-Map"><a href="#3-Map" class="headerlink" title="3. Map"></a>3. Map</h3><p>用于存储映射关系可以以对象作为 key 也可以使用基本数据类型作为 key</p>
 <h4 id="3-1-和对象储存映射关系的区别"><a href="#3-1-和对象储存映射关系的区别" class="headerlink" title="3-1 和对象储存映射关系的区别"></a>3-1 和对象储存映射关系的区别</h4><ul>
 <li>JS 中对象不能使用对象作为 key 的</li>
@@ -1562,12 +1562,12 @@ const bar=foo？？&quot;defualt value&quot;
 <p>语法：？. 如果调用的值为 undefined 就直接返回 undefined</p>
 <h3 id="11-ES11-globalThis"><a href="#11-ES11-globalThis" class="headerlink" title="11. ES11- globalThis"></a>11. ES11- globalThis</h3><p>获取某一个环境下的全局对象：globalThis</p>
 <h3 id="12-ES12-FinalizationRegistry-类"><a href="#12-ES12-FinalizationRegistry-类" class="headerlink" title="12. ES12 - FinalizationRegistry 类"></a>12. ES12 - FinalizationRegistry 类</h3><p>当被销毁掉是触发某些函数</p>
-<p><img src="/2022/021964822/image-20220118181304720.png" alt="image-20220118181304720"></p>
+<p><img src="/2022/021964822/image-20220118181304720.png"></p>
 <h3 id="13-ES12-WeakRef-类"><a href="#13-ES12-WeakRef-类" class="headerlink" title="13. ES12 - WeakRef 类"></a>13. ES12 - WeakRef 类</h3><p>如果我们想让对象是弱引用就可以使用 WeakRef 类</p>
 <p>new WeakRef(绑定的对象)</p>
 <p>通过 deref（）获取原来对象的属性</p>
-<p><img src="/2022/021964822/image-20220118183020139.png" alt="image-20220118183020139"></p>
-<p><img src="/2022/021964822/image-20220118182831974.png" alt="image-20220118182831974"></p>
+<p><img src="/2022/021964822/image-20220118183020139.png"></p>
+<p><img src="/2022/021964822/image-20220118182831974.png"></p>
 <h3 id="14-ES12-logical-assgin-operator-逻辑赋值运算符"><a href="#14-ES12-logical-assgin-operator-逻辑赋值运算符" class="headerlink" title="14. ES12 - logical-assgin-operator 逻辑赋值运算符"></a>14. ES12 - logical-assgin-operator 逻辑赋值运算符</h3><ul>
 <li><p>||= 逻辑或赋值运算</p>
 <pre><code class="js">let message = undefined;
@@ -1603,7 +1603,7 @@ const a= new Proxy(obj,&#123;
     &#125;
 &#125;)
 </code></pre>
-<p><img src="/2022/021964822/image-20220120112811046.png" alt="image-20220120112811046"></p>
+<p><img src="/2022/021964822/image-20220120112811046.png"></p>
 <h4 id="1-2-Proxy-的捕获器"><a href="#1-2-Proxy-的捕获器" class="headerlink" title="1-2 Proxy 的捕获器"></a>1-2 Proxy 的捕获器</h4><ul>
 <li><p>get 函数：获取值时的捕获器</p>
 <ol>
@@ -1637,7 +1637,7 @@ const a= new Proxy(obj,&#123;
 </ol>
 </li>
 </ul>
-<h4 id="1-3-Proxy-所有的捕获器"><a href="#1-3-Proxy-所有的捕获器" class="headerlink" title="1-3 Proxy 所有的捕获器"></a>1-3 Proxy 所有的捕获器</h4><p><img src="/2022/021964822/image-20220120114558665.png" alt="image-20220120114558665"></p>
+<h4 id="1-3-Proxy-所有的捕获器"><a href="#1-3-Proxy-所有的捕获器" class="headerlink" title="1-3 Proxy 所有的捕获器"></a>1-3 Proxy 所有的捕获器</h4><p><img src="/2022/021964822/image-20220120114558665.png"></p>
 <h4 id="1-4-reciver-参数的作用"><a href="#1-4-reciver-参数的作用" class="headerlink" title="1-4 reciver 参数的作用"></a>1-4 reciver 参数的作用</h4><h3 id="2-Reflect"><a href="#2-Reflect" class="headerlink" title="2. Reflect"></a>2. Reflect</h3><p><strong>注意：使用 Reflect 的方法会返回布尔值</strong></p>
 <h4 id="2-1-Reflect-的作用"><a href="#2-1-Reflect-的作用" class="headerlink" title="2-1 Reflect 的作用"></a>2-1 Reflect 的作用</h4><p><strong>它是一个对象，字面意思是反射</strong></p>
 <ul>
@@ -1649,7 +1649,7 @@ const a= new Proxy(obj,&#123;
 <li>但是 Object 作为一个构造函数这些操作放在上边不合适</li>
 <li>所以新增 Reflect ，让我们把这些操作集中到 Reflect 对象上</li>
 </ul>
-<h4 id="2-3-Reflect-常见方法"><a href="#2-3-Reflect-常见方法" class="headerlink" title="2-3 Reflect 常见方法"></a>2-3 Reflect 常见方法</h4><p><img src="/2022/021964822/image-20220120120124697.png" alt="image-20220120120124697"></p>
+<h4 id="2-3-Reflect-常见方法"><a href="#2-3-Reflect-常见方法" class="headerlink" title="2-3 Reflect 常见方法"></a>2-3 Reflect 常见方法</h4><p><img src="/2022/021964822/image-20220120120124697.png"></p>
 <h4 id="2-4-Reflect-结合-Proxy-的使用"><a href="#2-4-Reflect-结合-Proxy-的使用" class="headerlink" title="2-4 Reflect 结合 Proxy 的使用"></a>2-4 Reflect 结合 Proxy 的使用</h4><pre><code class="js">const obj = &#123;
   name: &quot;why&quot;,
   age: 18,
@@ -1681,8 +1681,8 @@ npromise.then(() =&gt; &#123;&#125;);
 //失败时的回调
 npromise.catch(() =&gt; &#123;&#125;);
 </code></pre>
-<p><img src="/2022/021964822/image-20220125171001785.png" alt="image-20220125171001785"></p>
-<h3 id="3-Promise-中的状态"><a href="#3-Promise-中的状态" class="headerlink" title="3. Promise 中的状态"></a>3. Promise 中的状态</h3><p><img src="/2022/021964822/image-20220125173338143.png" alt="image-20220125173338143"></p>
+<p><img src="/2022/021964822/image-20220125171001785.png"></p>
+<h3 id="3-Promise-中的状态"><a href="#3-Promise-中的状态" class="headerlink" title="3. Promise 中的状态"></a>3. Promise 中的状态</h3><p><img src="/2022/021964822/image-20220125173338143.png"></p>
 <p><strong>状态一旦确定就不可更改！！！</strong></p>
 <h3 id="4-Promise-的-resolve-参数"><a href="#4-Promise-的-resolve-参数" class="headerlink" title="4. Promise 的 resolve 参数"></a>4. Promise 的 resolve 参数</h3><h4 id="4-1-reslove-参数传入普通值或对象"><a href="#4-1-reslove-参数传入普通值或对象" class="headerlink" title="4-1 reslove 参数传入普通值或对象"></a>4-1 reslove 参数传入普通值或对象</h4><p>Pending 状态–》fuifilled</p>
 <h4 id="4-2-reslove-参数传入一个-Promise"><a href="#4-2-reslove-参数传入一个-Promise" class="headerlink" title="4-2 reslove 参数传入一个 Promise"></a>4-2 reslove 参数传入一个 Promise</h4><p>那么当前的 Promise 状态会由传入的 Promise 来决定，相当于状态进行了移交</p>
@@ -1712,10 +1712,10 @@ promise.then(() =&gt; &#123;&#125;);
 <li><p>如果我们返回的是一个普通值（数字/字符串/对象/undefined），那么这个普通的值被作为一个新的 Promise 的 resolve 值</p>
 </li>
 <li><p>如果返回的是一个 Promise</p>
-<p><img src="/2022/021964822/image-20220125214908799.png" alt="image-20220125214908799"></p>
+<p><img src="/2022/021964822/image-20220125214908799.png"></p>
 </li>
 <li><p>如果返回的是一个对象 并且该对象实现了 thenable</p>
-<p><img src="/2022/021964822/image-20220125215055280.png" alt="image-20220125215055280"></p>
+<p><img src="/2022/021964822/image-20220125215055280.png"></p>
 </li>
 </ol>
 </li>
@@ -1864,8 +1864,8 @@ promise.then(() =&gt; &#123;&#125;);
 <li>String</li>
 <li>NodeList 集合 拿到的 dom 元素</li>
 </ul>
-<h4 id="1-4-可迭代对象的应用场景"><a href="#1-4-可迭代对象的应用场景" class="headerlink" title="1-4 可迭代对象的应用场景"></a>1-4 可迭代对象的应用场景</h4><p><img src="/2022/021964822/image-20220203200507257.png" alt="image-20220203200507257"></p>
-<h4 id="1-5-迭代器的中断"><a href="#1-5-迭代器的中断" class="headerlink" title="1-5 迭代器的中断"></a>1-5 迭代器的中断</h4><p><img src="/2022/021964822/image-20220203212906534.png" alt="image-20220203212906534"></p>
+<h4 id="1-4-可迭代对象的应用场景"><a href="#1-4-可迭代对象的应用场景" class="headerlink" title="1-4 可迭代对象的应用场景"></a>1-4 可迭代对象的应用场景</h4><p><img src="/2022/021964822/image-20220203200507257.png"></p>
+<h4 id="1-5-迭代器的中断"><a href="#1-5-迭代器的中断" class="headerlink" title="1-5 迭代器的中断"></a>1-5 迭代器的中断</h4><p><img src="/2022/021964822/image-20220203212906534.png"></p>
 <h3 id="2-生成器-generator"><a href="#2-生成器-generator" class="headerlink" title="2. 生成器 generator"></a>2. 生成器 generator</h3><h4 id="2-1-什么是生成器"><a href="#2-1-什么是生成器" class="headerlink" title="2-1 什么是生成器"></a>2-1 什么是生成器</h4><ul>
 <li>生成器是 ES6 中新增的一种<strong>函数控制、使用</strong>的方案，它可以让我们更加灵活的控制函数什么时候继续执行、暂停执行等。</li>
 </ul>
@@ -1878,18 +1878,18 @@ promise.then(() =&gt; &#123;&#125;);
 </ul>
 <h4 id="2-3-生成器的其他方法使用"><a href="#2-3-生成器的其他方法使用" class="headerlink" title="2-3 生成器的其他方法使用"></a>2-3 生成器的其他方法使用</h4><ul>
 <li><p>生成器上的 next（）可以传递参数 但是要在前一段的 yield 接收参数</p>
-<p><img src="/2022/021964822/image-20220203215905754.png" alt="image-20220203215905754"></p>
+<p><img src="/2022/021964822/image-20220203215905754.png"></p>
 </li>
 <li><p>生成器的 return 方法 return（） 终止方法</p>
-<p><img src="/2022/021964822/image-20220203220421536.png" alt="image-20220203220421536"></p>
+<p><img src="/2022/021964822/image-20220203220421536.png"></p>
 </li>
 <li><p>生成器抛出异常 throw（）方法抛出异常</p>
-<p><img src="/2022/021964822/image-20220205102053916.png" alt="image-20220205102053916"></p>
+<p><img src="/2022/021964822/image-20220205102053916.png"></p>
 </li>
 </ul>
-<h2 id="第二十一节-asnyc-await"><a href="#第二十一节-asnyc-await" class="headerlink" title="第二十一节 asnyc await"></a>第二十一节 asnyc await</h2><h3 id="1-生成器代替迭代器"><a href="#1-生成器代替迭代器" class="headerlink" title="1. 生成器代替迭代器"></a>1. 生成器代替迭代器</h3><h4 id="1-1-第一种写法"><a href="#1-1-第一种写法" class="headerlink" title="1-1 第一种写法"></a>1-1 第一种写法</h4><p><img src="/2022/021964822/image-20220205102544952.png" alt="image-20220205102544952"></p>
+<h2 id="第二十一节-asnyc-await"><a href="#第二十一节-asnyc-await" class="headerlink" title="第二十一节 asnyc await"></a>第二十一节 asnyc await</h2><h3 id="1-生成器代替迭代器"><a href="#1-生成器代替迭代器" class="headerlink" title="1. 生成器代替迭代器"></a>1. 生成器代替迭代器</h3><h4 id="1-1-第一种写法"><a href="#1-1-第一种写法" class="headerlink" title="1-1 第一种写法"></a>1-1 第一种写法</h4><p><img src="/2022/021964822/image-20220205102544952.png"></p>
 <h4 id="1-2-第二种写法"><a href="#1-2-第二种写法" class="headerlink" title="1-2 第二种写法"></a>1-2 第二种写法</h4><p>yield* 可迭代对象</p>
-<p><img src="/2022/021964822/image-20220205102829211.png" alt="image-20220205102829211"></p>
+<p><img src="/2022/021964822/image-20220205102829211.png"></p>
 <h3 id="2-异步代码处理方案"><a href="#2-异步代码处理方案" class="headerlink" title="2. 异步代码处理方案"></a>2. 异步代码处理方案</h3><pre><code class="js">function requestData(url) &#123;
   return new Promise((resolve, reject) =&gt; &#123;
     setTimeout(() =&gt; &#123;
@@ -1981,8 +1981,8 @@ getData();
 <li>线程：每一个进程中都会启动至少一个线程来执行程序中的代码，这个线程被称之为主线程。</li>
 </ul>
 <p><strong>我们也可以说进程是线程的容器</strong></p>
-<h4 id="4-2-浏览器中的-js-线程"><a href="#4-2-浏览器中的-js-线程" class="headerlink" title="4-2 浏览器中的 js 线程"></a>4-2 浏览器中的 js 线程</h4><p><img src="/2022/021964822/image-20220206144017746.png" alt="image-20220206144017746"></p>
-<h2 id="第二十二节-事件循环-try-catch-throw"><a href="#第二十二节-事件循环-try-catch-throw" class="headerlink" title="第二十二节 事件循环 try/catch throw"></a>第二十二节 事件循环 try/catch throw</h2><h3 id="1-浏览器的事件循环"><a href="#1-浏览器的事件循环" class="headerlink" title="1. 浏览器的事件循环"></a>1. 浏览器的事件循环</h3><p><img src="/2022/021964822/image-20220206172334549.png" alt="image-20220206172334549"></p>
+<h4 id="4-2-浏览器中的-js-线程"><a href="#4-2-浏览器中的-js-线程" class="headerlink" title="4-2 浏览器中的 js 线程"></a>4-2 浏览器中的 js 线程</h4><p><img src="/2022/021964822/image-20220206144017746.png"></p>
+<h2 id="第二十二节-事件循环-try-catch-throw"><a href="#第二十二节-事件循环-try-catch-throw" class="headerlink" title="第二十二节 事件循环 try/catch throw"></a>第二十二节 事件循环 try/catch throw</h2><h3 id="1-浏览器的事件循环"><a href="#1-浏览器的事件循环" class="headerlink" title="1. 浏览器的事件循环"></a>1. 浏览器的事件循环</h3><p><img src="/2022/021964822/image-20220206172334549.png"></p>
 <ul>
 <li>事件队列先进先出</li>
 </ul>
@@ -2002,9 +2002,9 @@ getData();
 <li>优先微任务队列</li>
 <li>微任务队列清空之后执行宏任务队列</li>
 </ol>
-<h3 id="4-node-的事件循环"><a href="#4-node-的事件循环" class="headerlink" title="4. node 的事件循环"></a>4. node 的事件循环</h3><p><img src="/2022/021964822/image-20220207162836939.png" alt="image-20220207162836939"></p>
+<h3 id="4-node-的事件循环"><a href="#4-node-的事件循环" class="headerlink" title="4. node 的事件循环"></a>4. node 的事件循环</h3><p><img src="/2022/021964822/image-20220207162836939.png"></p>
 <h4 id="4-1-node-事件循环的阶段"><a href="#4-1-node-事件循环的阶段" class="headerlink" title="4-1 node 事件循环的阶段"></a>4-1 node 事件循环的阶段</h4><p><strong>事件循环像一个桥梁 连接着应用程序的 js 和系统调用之间的通道</strong></p>
-<p><img src="/2022/021964822/image-20220207163721835.png" alt="image-20220207163721835"></p>
+<p><img src="/2022/021964822/image-20220207163721835.png"></p>
 <h4 id="4-2-node-事件循环的微任务-宏任务"><a href="#4-2-node-事件循环的微任务-宏任务" class="headerlink" title="4-2 node 事件循环的微任务/宏任务"></a>4-2 node 事件循环的微任务/宏任务</h4><ul>
 <li><p>宏任务</p>
 <p>setTimeout ， setInterval ， IO 事件 ， setImmediate ， close 事件</p>
@@ -2026,8 +2026,8 @@ getData();
 <li>对抛出的异常不做处理 异常会进一步的抛出直到最顶层的调用 如果在最顶层也没有处理那么程序就会终止执行并且报错</li>
 <li>使用 try catch 来捕获异常</li>
 </ul>
-<h3 id="4-什么是模块化"><a href="#4-什么是模块化" class="headerlink" title="4. 什么是模块化"></a>4. 什么是模块化</h3><p><img src="/2022/021964822/image-20220208153705931.png" alt="image-20220208153705931"></p>
-<h3 id="5-CommonJS-规范"><a href="#5-CommonJS-规范" class="headerlink" title="5. CommonJS 规范"></a>5. CommonJS 规范</h3><p><img src="/2022/021964822/image-20220208201042091.png" alt="image-20220208201042091"></p>
+<h3 id="4-什么是模块化"><a href="#4-什么是模块化" class="headerlink" title="4. 什么是模块化"></a>4. 什么是模块化</h3><p><img src="/2022/021964822/image-20220208153705931.png"></p>
+<h3 id="5-CommonJS-规范"><a href="#5-CommonJS-规范" class="headerlink" title="5. CommonJS 规范"></a>5. CommonJS 规范</h3><p><img src="/2022/021964822/image-20220208201042091.png"></p>
 <h4 id="5-2-导出方案"><a href="#5-2-导出方案" class="headerlink" title="5-2 导出方案"></a>5-2 导出方案</h4><ol>
 <li><p>方案一 module.exports</p>
 <pre><code class="js">//导出 导出的是一个对象
@@ -2052,13 +2052,13 @@ exports.sum = sum;
 <li><p>直接引用模块 require（模块名）</p>
 </li>
 <li><p>require（‘路径’）</p>
-<p><img src="/2022/021964822/image-20220210135547465.png" alt="image-20220210135547465"></p>
+<p><img src="/2022/021964822/image-20220210135547465.png"></p>
 </li>
 <li><p>require(既不是路径 也不是核心模块)</p>
 </li>
 </ul>
-<p><img src="/2022/021964822/image-20220210140223979.png" alt="image-20220210140223979"></p>
-<h3 id="2-模块的加载过程"><a href="#2-模块的加载过程" class="headerlink" title="2. 模块的加载过程"></a>2. 模块的加载过程</h3><p><img src="/2022/021964822/image-20220210140958784.png" alt="image-20220210140958784"></p>
+<p><img src="/2022/021964822/image-20220210140223979.png"></p>
+<h3 id="2-模块的加载过程"><a href="#2-模块的加载过程" class="headerlink" title="2. 模块的加载过程"></a>2. 模块的加载过程</h3><p><img src="/2022/021964822/image-20220210140958784.png"></p>
 <h3 id="3-CommonJS-规范的缺点"><a href="#3-CommonJS-规范的缺点" class="headerlink" title="3. CommonJS 规范的缺点"></a>3. CommonJS 规范的缺点</h3><ul>
 <li>CommonJS 加载模块是同步的：<ul>
 <li>同步意味着只有等到对应的模块加载完毕之后，当前模块中的内容才能被运行</li>
@@ -2150,7 +2150,7 @@ import(&quot;./foo.js&quot;).then((res) =&gt; &#123;
   console.log(res.name);
 &#125;);
 </code></pre>
-<h2 id="第二十五节-包管理工具"><a href="#第二十五节-包管理工具" class="headerlink" title="第二十五节 包管理工具"></a>第二十五节 包管理工具</h2><h3 id="1-ESModule-的解析流程"><a href="#1-ESModule-的解析流程" class="headerlink" title="1. ESModule 的解析流程"></a>1. ESModule 的解析流程</h3><p><img src="/2022/021964822/image-20220210202208463.png" alt="image-20220210202208463"></p>
+<h2 id="第二十五节-包管理工具"><a href="#第二十五节-包管理工具" class="headerlink" title="第二十五节 包管理工具"></a>第二十五节 包管理工具</h2><h3 id="1-ESModule-的解析流程"><a href="#1-ESModule-的解析流程" class="headerlink" title="1. ESModule 的解析流程"></a>1. ESModule 的解析流程</h3><p><img src="/2022/021964822/image-20220210202208463.png"></p>
 <h3 id="2-ESmodule-和-commonJS-相互引用"><a href="#2-ESmodule-和-commonJS-相互引用" class="headerlink" title="2. ESmodule 和 commonJS 相互引用"></a>2. ESmodule 和 commonJS 相互引用</h3><p><strong>webpack 环境下可以相互引用</strong></p>
 <h3 id="3-npm"><a href="#3-npm" class="headerlink" title="3. npm"></a>3. npm</h3><ul>
 <li>包管理工具</li>
@@ -2207,7 +2207,7 @@ import(&quot;./foo.js&quot;).then((res) =&gt; &#123;
 </ul>
 </li>
 </ul>
-<h4 id="3-4-依赖管理版本"><a href="#3-4-依赖管理版本" class="headerlink" title="3-4 依赖管理版本"></a>3-4 依赖管理版本</h4><p><img src="/2022/021964822/image-20220210224013147.png" alt="image-20220210224013147"></p>
+<h4 id="3-4-依赖管理版本"><a href="#3-4-依赖管理版本" class="headerlink" title="3-4 依赖管理版本"></a>3-4 依赖管理版本</h4><p><img src="/2022/021964822/image-20220210224013147.png"></p>
 <h2 id="第二十六节-包管理工具二"><a href="#第二十六节-包管理工具二" class="headerlink" title="第二十六节 包管理工具二"></a>第二十六节 包管理工具二</h2><h3 id="1-npm-install"><a href="#1-npm-install" class="headerlink" title="1. npm install"></a>1. npm install</h3><ul>
 <li>全局安装 global install ： npm install webpack -g 只有工具属性才做全局安装</li>
 <li>局部安装 local install ： npm install webpack</li>
@@ -2219,8 +2219,8 @@ import(&quot;./foo.js&quot;).then((res) =&gt; &#123;
 <li>npm instal –D 装到 dev Dependsenies 中</li>
 <li>根据 package.json 中的依赖包 npm install</li>
 </ul>
-<h3 id="3-npm-install-原理"><a href="#3-npm-install-原理" class="headerlink" title="3. npm install 原理"></a>3. npm install 原理</h3><p><img src="/2022/021964822/image-20220211152147508.png" alt="image-20220211152147508"></p>
-<h3 id="4-package-lock-json-配置解析"><a href="#4-package-lock-json-配置解析" class="headerlink" title="4. package-lock.json 配置解析"></a>4. package-lock.json 配置解析</h3><p><img src="/2022/021964822/image-20220211154130187.png" alt="image-20220211154130187"></p>
+<h3 id="3-npm-install-原理"><a href="#3-npm-install-原理" class="headerlink" title="3. npm install 原理"></a>3. npm install 原理</h3><p><img src="/2022/021964822/image-20220211152147508.png"></p>
+<h3 id="4-package-lock-json-配置解析"><a href="#4-package-lock-json-配置解析" class="headerlink" title="4. package-lock.json 配置解析"></a>4. package-lock.json 配置解析</h3><p><img src="/2022/021964822/image-20220211154130187.png"></p>
 <h3 id="5-npm-其他命令"><a href="#5-npm-其他命令" class="headerlink" title="5. npm 其他命令"></a>5. npm 其他命令</h3><ul>
 <li>卸载 依赖 npm uninstall</li>
 <li>强制重新 build npm rebuild</li>
@@ -2233,7 +2233,7 @@ import(&quot;./foo.js&quot;).then((res) =&gt; &#123;
 <li>早起 npm 缺陷很多 安装依赖很慢 版本依赖混乱</li>
 <li>虽然 npm 现在升级了 还是有很多人喜欢 yarn</li>
 </ul>
-<p><img src="/2022/021964822/image-20220211155852327.png" alt="image-20220211155852327"></p>
+<p><img src="/2022/021964822/image-20220211155852327.png"></p>
 <h3 id="7-cnpm-工具"><a href="#7-cnpm-工具" class="headerlink" title="7. cnpm 工具"></a>7. cnpm 工具</h3><p>由于特殊的原因没法下载 npm 工具包 就需要用 cnpm 下载</p>
 <h3 id="8-npx-工具"><a href="#8-npx-工具" class="headerlink" title="8. npx 工具"></a>8. npx 工具</h3><p>npx webpack –version 可以使用局部 webpack</p>
 <h3 id="9-发布自己的包"><a href="#9-发布自己的包" class="headerlink" title="9. 发布自己的包"></a>9. 发布自己的包</h3><p>npm publish</p>
@@ -2419,9 +2419,9 @@ export &#123; localcache, sessioncache &#125;;
 <p><img src="/2022/021964822/image-20220214155705707.png"></p>
 <p><strong>history</strong></p>
 <p>允许我们访问浏览器曾经的记录历史</p>
-<p><img src="/2022/021964822/image-20220214160500148.png" alt="image-20220214160500148"></p>
+<p><img src="/2022/021964822/image-20220214160500148.png"></p>
 <h2 id="第二十九节-DOM-和-架构"><a href="#第二十九节-DOM-和-架构" class="headerlink" title="第二十九节 DOM 和 架构"></a>第二十九节 DOM 和 架构</h2><h3 id="1-参数的作用域"><a href="#1-参数的作用域" class="headerlink" title="1. 参数的作用域"></a>1. 参数的作用域</h3><p><strong>当函数参数有默认值的情况下会多生成一个新的作用域 这个作用域用于保存参数的值</strong></p>
-<h3 id="2-DOM-document-object-model"><a href="#2-DOM-document-object-model" class="headerlink" title="2. DOM document object model"></a>2. DOM document object model</h3><p><img src="/2022/021964822/image-20220214164306779.png" alt="image-20220214164306779"></p>
+<h3 id="2-DOM-document-object-model"><a href="#2-DOM-document-object-model" class="headerlink" title="2. DOM document object model"></a>2. DOM document object model</h3><p><img src="/2022/021964822/image-20220214164306779.png"></p>
 <p>node：节点</p>
 <p>document ：整个网页是 document</p>
 <p>element：标签元素</p>
